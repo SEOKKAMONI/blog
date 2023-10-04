@@ -3,8 +3,10 @@ import { Link, graphql } from "gatsby";
 
 import MainLayout from "../components/MainLayout";
 import { AllMarkdownRemark, SiteMetadata } from "../types/type";
+import styled from "@emotion/styled";
+import PostCard from "../components/PostCard";
 
-type PostPageTemplateProps = {
+type PostPageProps = {
   data: {
     site: { siteMetadata: SiteMetadata };
     allMarkdownRemark: AllMarkdownRemark;
@@ -12,49 +14,37 @@ type PostPageTemplateProps = {
   location: Location;
 };
 
-const PostPage = ({ data, location }: PostPageTemplateProps) => {
+const PostPage = ({ data, location }: PostPageProps) => {
   const siteTitle = data.site.siteMetadata?.title;
   const posts = data.allMarkdownRemark.nodes;
 
   return (
     <MainLayout title={siteTitle}>
-      <ol style={{ listStyle: `none` }}>
+      <StyledPostList>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug;
+          const description = post.frontmatter.description || post.excerpt;
 
           return (
-            <li key={post.fields.slug}>
-              <article
-                className="post-list-item"
-                itemScope
-                itemType="http://schema.org/Article"
-              >
-                <header>
-                  <h2>
-                    <Link to={post.fields.slug} itemProp="url">
-                      <span itemProp="headline">{title}</span>
-                    </Link>
-                  </h2>
-                  <small>{post.frontmatter.date}</small>
-                </header>
-                <section>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: post.frontmatter.description || post.excerpt,
-                    }}
-                    itemProp="description"
-                  />
-                </section>
-              </article>
-            </li>
+            <PostCard
+              key={post.fields.slug}
+              title={title}
+              description={description}
+            />
           );
         })}
-      </ol>
+      </StyledPostList>
     </MainLayout>
   );
 };
 
 export default PostPage;
+
+const StyledPostList = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 
 // export const Head = () => <Seo title="All posts" />;
 
