@@ -1,30 +1,23 @@
-import * as React from "react";
+import React from "react";
 import { Link, graphql } from "gatsby";
 
 import MainLayout from "../components/MainLayout";
-import Bio from "../components/bio";
-import Seo from "../components/seo";
+import { AllMarkdownRemark, SiteMetadata } from "../types/type";
 
-const BlogIndex = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata?.title || `Title`;
+type PostPageTemplateProps = {
+  data: {
+    site: { siteMetadata: SiteMetadata };
+    allMarkdownRemark: AllMarkdownRemark;
+  };
+  location: Location;
+};
+
+const PostPage = ({ data, location }: PostPageTemplateProps) => {
+  const siteTitle = data.site.siteMetadata?.title;
   const posts = data.allMarkdownRemark.nodes;
 
-  if (posts.length === 0) {
-    return (
-      <MainLayout title={siteTitle}>
-        <Bio />
-        <p>
-          No blog posts found. Add markdown posts to "content/blog" (or the
-          directory you specified for the "gatsby-source-filesystem" plugin in
-          gatsby-config.js).
-        </p>
-      </MainLayout>
-    );
-  }
-
   return (
-    <MainLayout location={location} title={siteTitle}>
-      <Bio />
+    <MainLayout title={siteTitle}>
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug;
@@ -61,14 +54,9 @@ const BlogIndex = ({ data, location }) => {
   );
 };
 
-export default BlogIndex;
+export default PostPage;
 
-/**
- * Head export to define metadata for the page
- *
- * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
- */
-export const Head = () => <Seo title="All posts" />;
+// export const Head = () => <Seo title="All posts" />;
 
 export const pageQuery = graphql`
   {

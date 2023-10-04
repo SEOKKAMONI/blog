@@ -11,11 +11,13 @@ const Footer = () => {
 export default Footer;
 
 const StyledFooter = styled.footer`
-  width: 100%;
-  height: 72px;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  height: 72px;
   overflow: hidden;
+  font-size: 18px;
+  font-weight: normal;
   color: ${({ theme }) => theme.colors.gray700};
 `;
