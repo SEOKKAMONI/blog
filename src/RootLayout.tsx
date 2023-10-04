@@ -1,4 +1,4 @@
-import { StyleProvider } from "./styles/StyleProvider";
+import { StyleProvider } from "./styles";
 import { ReactNode } from "react";
 
 interface RootLayoutProps {

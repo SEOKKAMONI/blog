@@ -1,3 +1,4 @@
+import React from "react";
 import { css, Global } from "@emotion/react";
 import { FontCSS } from "./font";
 import { ResetCSS } from "./reset";
@@ -8,7 +9,7 @@ const globalStyle = css`
   }
 
   body {
-    font-family: TossFace;
+    font-family: Pretendard;
     font-weight: normal;
   }
 `;
