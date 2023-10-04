@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 import { ReactNode } from "react";
 import Footer from "./Footer";
 import Header from "./Header";
+import { GlobalStyle } from "../styles";
 
 type LayoutProps = {
   title: string;
@@ -27,6 +28,4 @@ const StyledMainSection = styled.main`
   align-items: center;
   max-width: 1024px;
   margin: auto;
-
-  border: 1px solid black;
 `;
