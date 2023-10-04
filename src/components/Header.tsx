@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { Link } from "gatsby";
 import { useEffect, useState } from "react";
+import Logo from "./Logo";
 
 const Header = () => {
   const [isSticky, setIsSticky] = useState(false);
@@ -23,12 +24,11 @@ const Header = () => {
 
   return (
     <StyledHeader isSticky={isSticky}>
-      <h1>Seokjin.dev</h1>
+      <Logo />
       <StyledMenuWrapper>
+        <StyledMenuLink to="/">Github</StyledMenuLink>
         <StyledMenuLink to="/">Portfolio</StyledMenuLink>
-        <StyledMenuLink to="/">안녕</StyledMenuLink>
-        <StyledMenuLink to="/">안녕</StyledMenuLink>
-        <StyledMenuLink to="/">안녕</StyledMenuLink>
+        <StyledMenuLink to="/">About</StyledMenuLink>
       </StyledMenuWrapper>
     </StyledHeader>
   );
@@ -54,6 +54,13 @@ const StyledMenuWrapper = styled.div`
 `;
 
 const StyledMenuLink = styled(Link)`
+  padding: 12px 10px;
   text-decoration: none;
-  color: ${({ theme }) => theme.colors.black};
+  border-radius: 8px;
+  color: ${({ theme }) => theme.colors.gray700};
+
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.gray100};
+    color: ${({ theme }) => theme.colors.primary};
+  }
 `;

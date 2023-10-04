@@ -2,6 +2,8 @@ export type Colors = typeof colors;
 export type ColorKeys = keyof typeof colors;
 
 export const colors = {
+  primary: "#257CFF",
+
   // system
   black: "#000000",
   white: "#FFFFFF",
