@@ -1,6 +1,6 @@
 import type { WrapPageElementBrowserArgs } from "gatsby";
-import RootLayout from "./src/RootLayout";
+import Root from "./src/Root";
 
 export const wrapPageElement = ({ element }: WrapPageElementBrowserArgs) => {
-  return <RootLayout>{element}</RootLayout>;
+  return <Root>{element}</Root>;
 };
