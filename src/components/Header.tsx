@@ -44,6 +44,7 @@ const StyledHeader = styled.header<{ isSticky: boolean }>`
   justify-content: space-between;
   width: 100%;
   height: 54px;
+  z-index: 1;
   padding: 0 64px;
   background-color: ${({ theme }) => theme.colors.white};
   border-bottom: 1px solid
@@ -58,7 +59,6 @@ const StyledMenuWrapper = styled.div`
 
 const StyledMenuLink = styled(Link)`
   padding: 12px 10px;
-  text-decoration: none;
   border-radius: 8px;
   color: ${({ theme }) => theme.colors.gray700};
 

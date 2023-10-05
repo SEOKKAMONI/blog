@@ -1,9 +1,5 @@
 import styled from "@emotion/styled";
-import {
-  GatsbyImage,
-  IGatsbyImageData,
-  StaticImage,
-} from "gatsby-plugin-image";
+import { Link } from "gatsby";
 
 type PostCardProps = {
   title: string;
@@ -14,14 +10,16 @@ type PostCardProps = {
 
 const PostCard = ({ title, description, slug, date }: PostCardProps) => {
   return (
-    <StyledPostCard>
-      <StyledThumbnailImage />
-      <PostInfoWrapper>
-        <StyledTitle>{title}</StyledTitle>
-        <StyledDescription>{description}</StyledDescription>
-        <StyledDate>{date}</StyledDate>
-      </PostInfoWrapper>
-    </StyledPostCard>
+    <Link to={slug}>
+      <StyledPostCard>
+        <StyledThumbnailImage />
+        <PostInfoWrapper>
+          <StyledTitle>{title}</StyledTitle>
+          <StyledDescription>{description}</StyledDescription>
+          <StyledDate>{date}</StyledDate>
+        </PostInfoWrapper>
+      </StyledPostCard>
+    </Link>
   );
 };
 
