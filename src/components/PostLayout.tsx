@@ -3,14 +3,13 @@ import styled from "@emotion/styled";
 import { ReactNode } from "react";
 import Footer from "./Footer";
 import Header from "./Header";
-import { GlobalStyle } from "../styles";
 
-type MainLayoutProps = {
+type PostLayoutProps = {
   title: string;
   children: ReactNode;
 };
 
-const MainLayout = ({ title, children }: MainLayoutProps) => {
+const PostLayout = ({ title, children }: PostLayoutProps) => {
   return (
     <>
       <Header />
@@ -20,12 +19,12 @@ const MainLayout = ({ title, children }: MainLayoutProps) => {
   );
 };
 
-export default MainLayout;
+export default PostLayout;
 
 const StyledMainSection = styled.main`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  max-width: 900px;
+  max-width: 1024px;
   margin: auto;
+  padding: 60px 0;
 `;

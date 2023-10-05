@@ -8,7 +8,7 @@ const path = require(`path`);
 const { createFilePath } = require(`gatsby-source-filesystem`);
 
 // Define the template for blog post
-const blogPost = path.resolve(`./src/templates/blog-post.js`);
+const blogPost = path.resolve(`./src/templates/BlogPostTemplate.tsx`);
 
 /**
  * @type {import('gatsby').GatsbyNode['createPages']}
