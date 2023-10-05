@@ -37,12 +37,15 @@ const Header = () => {
 export default Header;
 
 const StyledHeader = styled.header<{ isSticky: boolean }>`
+  position: sticky;
+  top: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
   height: 54px;
   padding: 0 64px;
+  background-color: ${({ theme }) => theme.colors.white};
   border-bottom: 1px solid
     ${({ theme, isSticky }) => (isSticky ? theme.colors.gray200 : "none")};
 `;

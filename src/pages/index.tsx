@@ -2,7 +2,7 @@ import React from "react";
 import { Link, graphql } from "gatsby";
 
 import MainLayout from "../components/MainLayout";
-import { AllMarkdownRemark, SiteMetadata } from "../types/type";
+import { AllMarkdownRemark, SiteMetadata } from "../types/types";
 import styled from "@emotion/styled";
 import PostCard from "../components/PostCard";
 
@@ -24,12 +24,16 @@ const PostPage = ({ data, location }: PostPageProps) => {
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug;
           const description = post.frontmatter.description || post.excerpt;
+          const date = post.frontmatter.date;
+          const slug = post.fields.slug;
 
           return (
             <PostCard
-              key={post.fields.slug}
+              key={slug}
+              slug={slug}
               title={title}
               description={description}
+              date={date}
             />
           );
         })}
@@ -44,6 +48,8 @@ const StyledPostList = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 48px;
+  padding: 60px 0;
 `;
 
 // export const Head = () => <Seo title="All posts" />;

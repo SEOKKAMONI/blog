@@ -26,6 +26,6 @@ const StyledMainSection = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 1024px;
+  max-width: 900px;
   margin: auto;
 `;
