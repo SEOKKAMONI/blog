@@ -125,6 +125,11 @@ export const ResetCSS = css`
     border-collapse: collapse;
     border-spacing: 0;
   }
+  button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
   a {
     text-decoration: none;
   }

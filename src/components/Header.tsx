@@ -25,11 +25,7 @@ const Header = () => {
   return (
     <StyledHeader isSticky={isSticky}>
       <Logo />
-      <StyledMenuWrapper>
-        <StyledMenuLink to="/">Github</StyledMenuLink>
-        <StyledMenuLink to="/">Portfolio</StyledMenuLink>
-        <StyledMenuLink to="/">About</StyledMenuLink>
-      </StyledMenuWrapper>
+      <StyledContactButton>Contact</StyledContactButton>
     </StyledHeader>
   );
 };
@@ -43,27 +39,20 @@ const StyledHeader = styled.header<{ isSticky: boolean }>`
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  height: 54px;
+  height: 64px;
   z-index: 1;
-  padding: 0 64px;
+  padding: 0 60px;
   background-color: ${({ theme }) => theme.colors.white};
   border-bottom: 1px solid
     ${({ theme, isSticky }) => (isSticky ? theme.colors.gray200 : "none")};
 `;
 
-const StyledMenuWrapper = styled.div`
+const StyledContactButton = styled.button`
   display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 32px;
-`;
-
-const StyledMenuLink = styled(Link)`
-  padding: 12px 10px;
-  border-radius: 8px;
-  color: ${({ theme }) => theme.colors.gray700};
-
-  &:hover {
-    background-color: ${({ theme }) => theme.colors.gray100};
-    color: ${({ theme }) => theme.colors.primary};
-  }
+  height: 40px;
+  padding: 0px 16px;
+  border-radius: 20px 20px 20px 0px;
+  background-color: "#F6F6F6";
 `;
