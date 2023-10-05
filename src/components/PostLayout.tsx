@@ -13,7 +13,7 @@ const PostLayout = ({ title, children }: PostLayoutProps) => {
   return (
     <>
       <Header />
-      <StyledMainSection>{children}</StyledMainSection>
+      <StyledPostSection>{children}</StyledPostSection>
       <Footer />
     </>
   );
@@ -21,10 +21,11 @@ const PostLayout = ({ title, children }: PostLayoutProps) => {
 
 export default PostLayout;
 
-const StyledMainSection = styled.main`
+const StyledPostSection = styled.main`
   display: flex;
   flex-direction: column;
-  max-width: 1024px;
+  gap: 72px;
+  max-width: 900px;
   margin: auto;
   padding: 60px 0;
 `;
