@@ -1,17 +1,30 @@
-import * as React from "react";
+import React from "react";
 import { Link, graphql } from "gatsby";
-
 import MainLayout from "../components/MainLayout";
-import Seo from "../components/seo";
+import {
+  Fields,
+  Frontmatter,
+  MarkdownRemark,
+  SiteMetadata,
+} from "../types/types";
+
+type BlogPostTemplateProps = {
+  data: {
+    previous: { fields: Fields; frontmatter: Frontmatter };
+    next: { fields: Fields; frontmatter: Frontmatter };
+    site: { siteMetadata: SiteMetadata };
+    markdownRemark: MarkdownRemark;
+  };
+  location: string;
+};
 
 const BlogPostTemplate = ({
   data: { previous, next, site, markdownRemark: post },
-  location,
-}) => {
+}: BlogPostTemplateProps) => {
   const siteTitle = site.siteMetadata?.title || `Title`;
 
   return (
-    <MainLayout location={location} title={siteTitle}>
+    <MainLayout title={siteTitle}>
       <article
         className="blog-post"
         itemScope
@@ -55,15 +68,6 @@ const BlogPostTemplate = ({
         </ul>
       </nav>
     </MainLayout>
-  );
-};
-
-export const Head = ({ data: { markdownRemark: post } }) => {
-  return (
-    <Seo
-      title={post.frontmatter.title}
-      description={post.frontmatter.description || post.excerpt}
-    />
   );
 };
 

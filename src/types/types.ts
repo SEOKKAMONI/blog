@@ -2,14 +2,14 @@ export type SiteMetadata = {
   title: string;
 };
 
-export type Post = {
-  excerpt: string;
-  fields: Fields;
-  frontmatter: Frontmatter;
+export type AllMarkdownRemark = {
+  nodes: { excerpt: string; fields: Fields; frontmatter: Frontmatter }[];
 };
 
-export type AllMarkdownRemark = {
-  nodes: Post[];
+export type MarkdownRemark = {
+  excerpt: string;
+  html: string;
+  frontmatter: Frontmatter;
 };
 
 export type Frontmatter = {

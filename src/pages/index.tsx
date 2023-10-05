@@ -14,7 +14,7 @@ type AllPostPageProps = {
   location: Location;
 };
 
-const AllPostPage = ({ data, location }: AllPostPageProps) => {
+const AllPostPage = ({ data }: AllPostPageProps) => {
   const siteTitle = data.site.siteMetadata?.title;
   const posts = data.allMarkdownRemark.nodes;
 
