@@ -1,7 +1,12 @@
 import styled from "@emotion/styled";
+import { Link } from "gatsby";
 
 const Logo = () => {
-  return <StyledLogo>Seokjin.dev</StyledLogo>;
+  return (
+    <Link to="/">
+      <StyledLogo>Seokjin.dev</StyledLogo>
+    </Link>
+  );
 };
 
 export default Logo;

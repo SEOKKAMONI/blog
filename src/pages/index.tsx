@@ -6,7 +6,7 @@ import { AllMarkdownRemark, SiteMetadata } from "../types/types";
 import styled from "@emotion/styled";
 import PostCard from "../components/PostCard";
 
-type PostPageProps = {
+type AllPostPageProps = {
   data: {
     site: { siteMetadata: SiteMetadata };
     allMarkdownRemark: AllMarkdownRemark;
@@ -14,7 +14,7 @@ type PostPageProps = {
   location: Location;
 };
 
-const PostPage = ({ data, location }: PostPageProps) => {
+const AllPostPage = ({ data, location }: AllPostPageProps) => {
   const siteTitle = data.site.siteMetadata?.title;
   const posts = data.allMarkdownRemark.nodes;
 
@@ -42,7 +42,7 @@ const PostPage = ({ data, location }: PostPageProps) => {
   );
 };
 
-export default PostPage;
+export default AllPostPage;
 
 const StyledPostList = styled.div`
   display: flex;
