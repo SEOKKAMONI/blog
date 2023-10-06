@@ -1,26 +1,19 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-config/
- */
-
-/**
- * @type {import('gatsby').GatsbyConfig}
- */
-module.exports = {
-  siteMetadata: {
-    title: `Gatsby Starter Blog`,
-    author: {
-      name: `김발전소`,
-      position: "Frontend Developer",
-      summary: `발전중인 발전소 김발전소입니다.`,
-    },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
-    social: {
-      twitter: `kylemathews`,
-    },
+const SITE_METADATA = Object.freeze({
+  title: "김석진의 기술 블로그",
+  author: {
+    name: `김발전소`,
+    position: "Frontend Developer",
+    summary: `발전중인 발전소 김발전소입니다.`,
   },
+  description: "주니어 프론트엔드 개발자 김석진의 기술 블로그입니다.",
+  siteUrl: "https://github.com/seokkamoni",
+  social: {
+    twitter: "",
+  },
+});
+
+module.exports = {
+  siteMetadata: SITE_METADATA,
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
@@ -34,6 +27,17 @@ module.exports = {
       options: {
         name: `assets`,
         path: `${__dirname}/src/assets`,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-web-font-loader",
+      options: {
+        custom: {
+          families: ["Pretendard"],
+          urls: [
+            "https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css",
+          ],
+        },
       },
     },
     {
