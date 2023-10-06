@@ -27,4 +27,5 @@ const StyledMainSection = styled.main`
   align-items: center;
   max-width: 940px;
   margin: auto;
+  padding-top: 76px;
 `;

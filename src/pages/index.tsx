@@ -51,7 +51,8 @@ const StyledPostList = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 48px;
-  padding: 60px 0;
+  width: 100%;
+  padding: 40px 0;
 `;
 
 // export const Head = () => <Seo title="All posts" />;

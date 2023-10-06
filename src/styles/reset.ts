@@ -132,5 +132,6 @@ export const ResetCSS = css`
   }
   a {
     text-decoration: none;
+    cursor: pointer;
   }
 `;

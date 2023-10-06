@@ -30,7 +30,7 @@ const Bio = () => {
         src="../assets/profile.png"
         width={150}
         height={150}
-        style={{ borderRadius: "36px 36px 36px 0px" }}
+        style={{ borderRadius: "36px 36px 36px 0" }}
         alt="Profile Image"
       />
       <StyledInfoWrapper>
@@ -76,12 +76,12 @@ const StyledName = styled.span`
 
 const StyledPosition = styled.span`
   font-size: 20px;
-  font-weight: medium;
+  font-weight: normal;
   color: ${({ theme }) => theme.colors.gray900};
 `;
 
-const StyledSummary = styled.span`
+const StyledSummary = styled.p`
   color: #666;
   font-size: 16px;
-  font-weight: medium;
+  font-weight: normal;
 `;
