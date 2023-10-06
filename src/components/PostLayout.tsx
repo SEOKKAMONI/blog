@@ -27,11 +27,17 @@ const StyledPostSection = styled.main`
   gap: 72px;
   max-width: 940px;
   margin: auto;
-  padding-left: 60px;
-  padding-right: 60px;
+  padding-top: 76px;
+  padding-bottom: 76px;
+
+  @media screen and (max-width: 1100px) {
+    max-width: 100%;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
 
   @media screen and (max-width: 650px) {
     max-width: 100%;
-    padding: 20px 25px;
+    padding: 25px 20px;
   }
 `;
