@@ -5,6 +5,7 @@ import MainLayout from "../components/MainLayout";
 import { AllMarkdownRemark, SiteMetadata } from "../types/types";
 import styled from "@emotion/styled";
 import PostCard from "../components/PostCard";
+import Bio from "../components/Bio";
 
 type AllPostPageProps = {
   data: {
@@ -20,6 +21,7 @@ const AllPostPage = ({ data }: AllPostPageProps) => {
 
   return (
     <MainLayout title={siteTitle}>
+      <Bio />
       <StyledPostList>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug;
