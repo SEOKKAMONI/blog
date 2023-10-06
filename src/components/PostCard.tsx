@@ -25,13 +25,8 @@ const PostCard = ({
           <StyledDate>{date}</StyledDate>
         </StyledInfoWrapper>
         {thumbnail && (
-          <GatsbyImage
+          <StyledThumbnailImage
             image={thumbnail}
-            style={{
-              width: "300px",
-              height: "180px",
-              borderRadius: "36px 36px 36px 0",
-            }}
             alt={`${slug} Thumbnail Image`}
           />
         )}
@@ -52,6 +47,28 @@ const StyledPostCard = styled.div`
 
   &:hover {
     transform: translateY(-8px);
+  }
+
+  @media screen and (max-width: 1100px) {
+    height: 144px;
+  }
+
+  @media screen and (max-width: 650px) {
+    height: 88px;
+  }
+`;
+
+const StyledThumbnailImage = styled(GatsbyImage)`
+  width: 300px;
+  height: 100%;
+  border-radius: 36px 36px 36px 0;
+
+  @media screen and (max-width: 1100px) {
+    width: 240px;
+  }
+
+  @media screen and (max-width: 650px) {
+    width: 180px;
   }
 `;
 

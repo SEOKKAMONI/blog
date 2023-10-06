@@ -28,4 +28,17 @@ const StyledMainSection = styled.main`
   max-width: 940px;
   margin: auto;
   padding-top: 76px;
+
+  @media screen and (max-width: 1100px) {
+    max-width: 100%;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  @media screen and (max-width: 650px) {
+    max-width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 25px;
+  }
 `;

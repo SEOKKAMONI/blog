@@ -41,10 +41,21 @@ const StyledHeader = styled.header<{ isSticky: boolean }>`
   width: 100%;
   height: 64px;
   z-index: 1;
-  padding: 0 60px;
+  padding-left: 60px;
+  padding-right: 60px;
   background-color: ${({ theme }) => theme.colors.white};
   border-bottom: 1px solid
     ${({ theme, isSticky }) => (isSticky ? theme.colors.gray200 : "none")};
+
+  @media screen and (max-width: 1100px) {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  @media screen and (max-width: 650px) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 `;
 
 const StyledContactButton = styled.button`
