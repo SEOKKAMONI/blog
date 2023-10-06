@@ -37,8 +37,6 @@ const StyledMainSection = styled.main`
 
   @media screen and (max-width: 650px) {
     max-width: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 25px;
+    padding: 20px 25px;
   }
 `;
