@@ -1,10 +1,10 @@
 {
-  "name": "seokjin-blog",
+  "name": "gatsby-starter-bbang-blog",
   "private": true,
   "version": "0.1.0",
   "author": "kimseokjin <sj01048260279@gmail.com>",
   "bugs": {
-    "url": "https://github.com/letsdevelopseokjin/seokjin.fun/issues"
+    "url": "https://github.com/letsdevelopseokjin/gatsby-starter-bbang-blog/issues"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
@@ -32,14 +32,11 @@
     "gatsby-post-gen": "^1.0.0",
     "prettier": "^2.8.8"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "0BSD",
+  "license": "MIT",
+  "homepage": "https://github.com/letsdevelopseokjin/gatsby-starter-bbang-blog#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "git+https://github.com/letsdevelopseokjin/gatsby-starter-bbang-blog"
   },
   "scripts": {
     "post": "gatsby-post-gen",
