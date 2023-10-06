@@ -51,10 +51,10 @@ const StyledContactButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 40px;
   border-radius: 20px 20px 20px 0;
   font-size: 18px;
   font-weight: medium;
-  height: 40px;
   padding: 0 16px;
   color: #222;
   background-color: "#F6F6F6";

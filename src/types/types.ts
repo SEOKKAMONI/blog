@@ -1,3 +1,5 @@
+import { IGatsbyImageData } from "gatsby-plugin-image";
+
 export type SiteMetadata = {
   title: string;
 };
@@ -13,6 +15,7 @@ export type MarkdownRemark = {
 };
 
 export type Frontmatter = {
+  thumbnail: IGatsbyImageData;
   date: string;
   title: string;
   description: string;

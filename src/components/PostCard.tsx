@@ -1,15 +1,22 @@
 import styled from "@emotion/styled";
 import { Link } from "gatsby";
-import { StaticImage } from "gatsby-plugin-image";
+import { GatsbyImage, getImage, IGatsbyImageData } from "gatsby-plugin-image";
 
 type PostCardProps = {
+  thumbnail?: IGatsbyImageData;
   title: string;
   description: string;
   slug: string;
   date: string;
 };
 
-const PostCard = ({ title, description, slug, date }: PostCardProps) => {
+const PostCard = ({
+  thumbnail,
+  title,
+  description,
+  slug,
+  date,
+}: PostCardProps) => {
   return (
     <Link to={slug} style={{ width: "100%" }}>
       <StyledPostCard>
@@ -17,13 +24,17 @@ const PostCard = ({ title, description, slug, date }: PostCardProps) => {
           <StyledTitle>{title}</StyledTitle>
           <StyledDate>{date}</StyledDate>
         </StyledInfoWrapper>
-        <StaticImage
-          src="../assets/profile.png"
-          style={{ borderRadius: "36px 36px 36px 0" }}
-          width={300}
-          height={180}
-          alt="Thumbnail Image"
-        />
+        {thumbnail && (
+          <GatsbyImage
+            image={thumbnail}
+            style={{
+              width: "300px",
+              height: "180px",
+              borderRadius: "36px 36px 36px 0",
+            }}
+            alt={`${slug} Thumbnail Image`}
+          />
+        )}
       </StyledPostCard>
     </Link>
   );
@@ -48,12 +59,14 @@ const StyledInfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
+  width: 100%;
 `;
 
-const StyledTitle = styled.span`
+const StyledTitle = styled.p`
   color: #222;
   font-size: 24px;
   font-weight: medium;
+  max-width: 80%;
 `;
 
 const StyledDate = styled.span`

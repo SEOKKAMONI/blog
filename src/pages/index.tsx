@@ -6,6 +6,7 @@ import { AllMarkdownRemark, SiteMetadata } from "../types/types";
 import styled from "@emotion/styled";
 import PostCard from "../components/PostCard";
 import Bio from "../components/Bio";
+import { getImage } from "gatsby-plugin-image";
 
 type AllPostPageProps = {
   data: {
@@ -24,6 +25,7 @@ const AllPostPage = ({ data }: AllPostPageProps) => {
       <Bio />
       <StyledPostList>
         {posts.map(post => {
+          const thumbnail = getImage(post.frontmatter.thumbnail);
           const title = post.frontmatter.title || post.fields.slug;
           const description = post.frontmatter.description || post.excerpt;
           const date = post.frontmatter.date;
@@ -32,6 +34,7 @@ const AllPostPage = ({ data }: AllPostPageProps) => {
           return (
             <PostCard
               key={slug}
+              thumbnail={thumbnail}
               slug={slug}
               title={title}
               description={description}
@@ -71,9 +74,14 @@ export const pageQuery = graphql`
           slug
         }
         frontmatter {
-          date(formatString: "MMMM DD, YYYY")
+          thumbnail {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
           title
           description
+          date(formatString: "MMMM DD, YYYY")
         }
       }
     }
