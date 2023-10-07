@@ -1,1 +1,1 @@
-# gatsby-blog-starter
+# gatsby-starter-bbang-blog

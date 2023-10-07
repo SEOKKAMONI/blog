@@ -4,7 +4,7 @@ import { Link } from "gatsby";
 const Logo = () => {
   return (
     <Link to="/">
-      <StyledLogo>Bbang.dev</StyledLogo>
+      <StyledLogo>Bbang Blog</StyledLogo>
     </Link>
   );
 };

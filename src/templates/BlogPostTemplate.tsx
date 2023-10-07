@@ -81,7 +81,6 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "YYYY-MM-DD")
-        description
       }
     }
     previous: markdownRemark(id: { eq: $previousPostId }) {

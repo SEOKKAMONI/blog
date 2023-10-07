@@ -5,18 +5,11 @@ import { GatsbyImage, getImage, IGatsbyImageData } from "gatsby-plugin-image";
 type PostCardProps = {
   thumbnail?: IGatsbyImageData;
   title: string;
-  description: string;
   slug: string;
   date: string;
 };
 
-const PostCard = ({
-  thumbnail,
-  title,
-  description,
-  slug,
-  date,
-}: PostCardProps) => {
+const PostCard = ({ thumbnail, title, slug, date }: PostCardProps) => {
   return (
     <Link to={slug} style={{ width: "100%" }}>
       <StyledPostCard>

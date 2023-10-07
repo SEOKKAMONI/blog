@@ -27,7 +27,6 @@ const AllPostPage = ({ data }: AllPostPageProps) => {
         {posts.map(post => {
           const thumbnail = getImage(post.frontmatter.thumbnail);
           const title = post.frontmatter.title || post.fields.slug;
-          const description = post.frontmatter.description || post.excerpt;
           const date = post.frontmatter.date;
           const slug = post.fields.slug;
 
@@ -37,7 +36,6 @@ const AllPostPage = ({ data }: AllPostPageProps) => {
               thumbnail={thumbnail}
               slug={slug}
               title={title}
-              description={description}
               date={date}
             />
           );
@@ -78,7 +76,6 @@ export const pageQuery = graphql`
             }
           }
           title
-          description
           date(formatString: "YYYY-MM-DD")
         }
       }

@@ -1,17 +1,16 @@
 const SITE_METADATA = Object.freeze({
-  title: "빵빵이의 기술 블로그",
+  title: "Title",
   author: {
-    name: `빵빵이`,
-    position: "Youtuber",
-    summary: `옥지를 사랑하는 빵빵이입니다.`,
+    name: "Name",
+    position: "Position",
+    summary: "I'm Seokjin, your theme creator. ",
   },
-  description: "빵빵이의 기술 블로그입니다.",
   siteUrl: "https://github.com/seokkamoni",
   social: {
-    phoneNumber: `010-1234-5678`,
-    gmail: `dev.seokjin06`,
-    github: `SEOKKAMONI`,
-    instagram: `sj20060706`,
+    phoneNumber: "010-1234-5678",
+    gmail: "gmail",
+    github: "github-id",
+    instagram: "instagram-id",
   },
 });
 
