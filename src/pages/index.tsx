@@ -7,6 +7,7 @@ import styled from "@emotion/styled";
 import PostCard from "../components/PostCard";
 import Bio from "../components/Bio";
 import { getImage } from "gatsby-plugin-image";
+import Seo from "../components/Seo";
 
 type AllPostPageProps = {
   data: {
@@ -22,6 +23,7 @@ const AllPostPage = ({ data }: AllPostPageProps) => {
 
   return (
     <MainLayout title={siteTitle}>
+      <Seo title="Bbang Blog" />
       <Bio />
       <StyledPostList>
         {posts.map(post => {

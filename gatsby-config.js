@@ -5,6 +5,7 @@ const SITE_METADATA = Object.freeze({
     position: "Position",
     summary: "I'm Seokjin, your theme creator. ",
   },
+  description: "description",
   siteUrl: "https://github.com/seokkamoni",
   social: {
     phoneNumber: "010-1234-5678",

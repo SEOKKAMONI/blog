@@ -1,13 +1,13 @@
 import React, { ReactNode } from "react";
 import { useStaticQuery, graphql } from "gatsby";
+import { Helmet } from "react-helmet";
 
 type SeoProps = {
   title: string;
-  description: string;
-  children: ReactNode;
+  description?: string;
 };
 
-const Seo = ({ title, description, children }: SeoProps) => {
+const Seo = ({ title, description }: SeoProps) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -15,6 +15,9 @@ const Seo = ({ title, description, children }: SeoProps) => {
           siteMetadata {
             title
             description
+            author {
+              name
+            }
           }
         }
       }
@@ -22,24 +25,41 @@ const Seo = ({ title, description, children }: SeoProps) => {
   );
 
   const metaDescription = description || site.siteMetadata.description;
-  const defaultTitle = site.siteMetadata?.title;
+  const defaultTitle = site.siteMetadata.title;
+  const name = site.siteMetadata.author.name;
 
   return (
-    <>
-      <title>{defaultTitle ? `${title} | ${defaultTitle}` : title}</title>
-      <meta name="description" content={metaDescription} />
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={metaDescription} />
-      <meta property="og:type" content="website" />
-      <meta name="twitter:card" content="summary" />
-      <meta
-        name="twitter:creator"
-        content={site.siteMetadata?.social?.twitter || ``}
-      />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={metaDescription} />
-      {children}
-    </>
+    <Helmet
+      htmlAttributes={{ lang: "en" }}
+      title={title}
+      defaultTitle={defaultTitle}
+      meta={[
+        {
+          property: `og:title`,
+          content: title,
+        },
+        {
+          property: `og:site_title`,
+          content: title,
+        },
+        {
+          name: `description`,
+          content: metaDescription,
+        },
+        {
+          property: `og:description`,
+          content: metaDescription,
+        },
+        {
+          property: "og:author",
+          content: name,
+        },
+        {
+          property: `og:type`,
+          content: `website`,
+        },
+      ]}
+    />
   );
 };
 

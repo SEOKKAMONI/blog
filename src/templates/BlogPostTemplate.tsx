@@ -8,6 +8,7 @@ import {
 } from "../types/types";
 import styled from "@emotion/styled";
 import PostLayout from "../components/PostLayout";
+import Seo from "../components/Seo";
 
 type BlogPostTemplateProps = {
   data: {
@@ -24,11 +25,13 @@ const BlogPostTemplate = ({
 }: BlogPostTemplateProps) => {
   const siteTitle = site.siteMetadata?.title;
   const title = post.frontmatter.title;
+  const description = post.frontmatter.description;
   const date = post.frontmatter.date;
   const html = post.html;
 
   return (
     <PostLayout title={siteTitle}>
+      <Seo title={title} description={description} />
       <StyledPostHeader>
         <StyledTitle>{title}</StyledTitle>
         <StyledDate>{date}</StyledDate>
@@ -80,6 +83,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
+        description
         date(formatString: "YYYY-MM-DD")
       }
     }
