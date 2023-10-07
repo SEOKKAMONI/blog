@@ -1,11 +1,11 @@
 const SITE_METADATA = Object.freeze({
-  title: "김석진의 기술 블로그",
+  title: "빵빵이의 기술 블로그",
   author: {
-    name: `김발전소`,
-    position: "Frontend Developer",
-    summary: `발전중인 발전소 김발전소입니다.`,
+    name: `빵빵이`,
+    position: "Youtuber",
+    summary: `옥지를 사랑하는 빵빵이입니다.`,
   },
-  description: "주니어 프론트엔드 개발자 김석진의 기술 블로그입니다.",
+  description: "빵빵이의 기술 블로그입니다.",
   siteUrl: "https://github.com/seokkamoni",
   social: {
     twitter: "",
