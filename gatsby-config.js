@@ -26,7 +26,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `assets`,
-        path: `${__dirname}/src/assets`,
+        path: `${__dirname}/assets`,
       },
     },
     {
@@ -124,7 +124,7 @@ module.exports = {
         // https://css-tricks.com/meta-theme-color-and-trickery/
         // theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/assets/profile.png`, // This path is relative to the root of the site.
+        icon: `${__dirname}/assets/profile.png`, // This path is relative to the root of the site.
       },
     },
   ],
