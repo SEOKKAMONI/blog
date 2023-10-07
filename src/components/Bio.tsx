@@ -13,16 +13,12 @@ const Bio = () => {
             summary
             position
           }
-          social {
-            twitter
-          }
         }
       }
     }
   `);
 
   const { name, summary, position } = data.site.siteMetadata?.author;
-  const social = data.site.siteMetadata?.social;
 
   return (
     <StyledBio>

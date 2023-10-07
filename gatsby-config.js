@@ -8,7 +8,10 @@ const SITE_METADATA = Object.freeze({
   description: "빵빵이의 기술 블로그입니다.",
   siteUrl: "https://github.com/seokkamoni",
   social: {
-    twitter: "",
+    phoneNumber: `010-1234-5678`,
+    gmail: `dev.seokjin06`,
+    github: `SEOKKAMONI`,
+    instagram: `sj20060706`,
   },
 });
 

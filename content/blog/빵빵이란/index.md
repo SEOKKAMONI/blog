@@ -1,7 +1,7 @@
 ---
 thumbnail: "./thumbnail.png"
 title: 빵빵이란
-date: "2015-05-01T22:12:03.284Z"
+date: "2023-10-08"
 description: "빵빵이란 무엇일까?"
 ---
 

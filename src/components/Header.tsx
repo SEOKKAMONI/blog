@@ -2,9 +2,12 @@ import styled from "@emotion/styled";
 import { Link } from "gatsby";
 import { useEffect, useState } from "react";
 import Logo from "./Logo";
+import { useOverlay } from "@toss/use-overlay";
+import ContactOverlay from "./ContactOverlay";
 
 const Header = () => {
   const [isSticky, setIsSticky] = useState(false);
+  const overlay = useOverlay();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,10 +25,17 @@ const Header = () => {
     };
   }, []);
 
+  const openContactOverlay = () =>
+    overlay.open(({ isOpen, close }) => (
+      <ContactOverlay isOpen={isOpen} onClose={close} />
+    ));
+
   return (
     <StyledHeader isSticky={isSticky}>
       <Logo />
-      <StyledContactButton>Contact</StyledContactButton>
+      <StyledContactButton onClick={openContactOverlay}>
+        Contact
+      </StyledContactButton>
     </StyledHeader>
   );
 };
