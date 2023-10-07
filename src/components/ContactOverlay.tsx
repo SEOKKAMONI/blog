@@ -119,7 +119,7 @@ const StyledContact = styled.div`
 
 const CloseButton = styled(IconClose)`
   position: absolute;
-  top: 10px;
+  top: 20px;
   right: 70px;
   width: 72px;
   height: 72px;
