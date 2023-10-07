@@ -58,8 +58,6 @@ const StyledPostList = styled.div`
   padding: 40px 0;
 `;
 
-// export const Head = () => <Seo title="All posts" />;
-
 export const pageQuery = graphql`
   {
     site {
