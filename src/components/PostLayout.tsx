@@ -37,7 +37,6 @@ const StyledPostSection = styled.main`
   }
 
   @media screen and (max-width: 650px) {
-    max-width: 100%;
     padding: 25px 20px;
   }
 `;

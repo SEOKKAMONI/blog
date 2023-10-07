@@ -28,14 +28,7 @@ const ContactOverlay = ({ isOpen, onClose }: ContactOverlayProps) => {
 
   return (
     <StyledContactOverlay isOpen={isOpen}>
-      <IconClose
-        onClick={onClose}
-        style={{ position: "absolute", top: "10px", right: "70px" }}
-        cursor="pointer"
-        width={72}
-        height={72}
-        color="#D9D9D9"
-      />
+      <CloseButton onClick={onClose} />
       <StyledContactWrapper>
         {social.phoneNumber && (
           <StyledContact>{social.phoneNumber}</StyledContact>
@@ -68,6 +61,17 @@ const StyledContactOverlay = styled.div<{ isOpen: boolean }>`
   z-index: 2;
   backdrop-filter: blur(3px);
   background-color: rgba(0, 0, 0, 0.8);
+
+  @media screen and (max-width: 1100px) {
+    width: 100%;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  @media screen and (max-width: 650px) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 `;
 
 const StyledContactWrapper = styled.div`
@@ -77,6 +81,15 @@ const StyledContactWrapper = styled.div`
   width: 700px;
   max-height: 780px;
   padding-top: 120px;
+
+  @media screen and (max-width: 1100px) {
+    gap: 24px;
+    width: 100%;
+  }
+
+  @media screen and (max-width: 650px) {
+    gap: 16px;
+  }
 `;
 
 const StyledContact = styled.div`
@@ -92,4 +105,34 @@ const StyledContact = styled.div`
   font-size: 32px;
   font-weight: 600;
   background-color: rgba(255, 255, 255, 0.2);
+
+  @media screen and (max-width: 1100px) {
+    height: 80px;
+    font-size: 28px;
+  }
+
+  @media screen and (max-width: 650px) {
+    height: 56px;
+    font-size: 16px;
+  }
+`;
+
+const CloseButton = styled(IconClose)`
+  position: absolute;
+  top: 10px;
+  right: 70px;
+  width: 72px;
+  height: 72px;
+  cursor: pointer;
+  color: #d9d9d9;
+
+  @media screen and (max-width: 1100px) {
+    right: 32px;
+    width: 48px;
+    height: 48px;
+  }
+
+  @media screen and (max-width: 650px) {
+    right: 20px;
+  }
 `;
