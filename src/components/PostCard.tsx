@@ -11,26 +11,24 @@ type PostCardProps = {
 
 const PostCard = ({ thumbnail, title, slug, date }: PostCardProps) => {
   return (
-    <Link to={slug} style={{ width: "100%" }}>
-      <StyledPostCard>
-        <StyledInfoWrapper>
-          <StyledTitle>{title}</StyledTitle>
-          <StyledDate>{date}</StyledDate>
-        </StyledInfoWrapper>
-        {thumbnail && (
-          <StyledThumbnailImage
-            image={thumbnail}
-            alt={`${slug} Thumbnail Image`}
-          />
-        )}
-      </StyledPostCard>
-    </Link>
+    <StyledPostCard to={slug}>
+      <StyledInfoWrapper>
+        <StyledTitle>{title}</StyledTitle>
+        <StyledDate>{date}</StyledDate>
+      </StyledInfoWrapper>
+      {thumbnail && (
+        <StyledThumbnailImage
+          image={thumbnail}
+          alt={`${slug} Thumbnail Image`}
+        />
+      )}
+    </StyledPostCard>
   );
 };
 
 export default PostCard;
 
-const StyledPostCard = styled.div`
+const StyledPostCard = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: space-between;

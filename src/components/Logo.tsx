@@ -2,16 +2,12 @@ import styled from "@emotion/styled";
 import { Link } from "gatsby";
 
 const Logo = () => {
-  return (
-    <Link to="/">
-      <StyledLogo>Bbang Blog</StyledLogo>
-    </Link>
-  );
+  return <StyledLogo to="/">Bbang Blog</StyledLogo>;
 };
 
 export default Logo;
 
-const StyledLogo = styled.span`
+const StyledLogo = styled(Link)`
   cursor: pointer;
   font-size: 18px;
   font-weight: bold;
