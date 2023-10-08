@@ -72,4 +72,8 @@ const StyledTitle = styled.span`
   font-size: 18px;
   font-weight: medium;
   color: ${({ theme }) => theme.colors.black};
+
+  @media screen and (max-width: 650px) {
+    -webkit-line-clamp: 1;
+  }
 `;
