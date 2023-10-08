@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://statuesque-moonbeam-3bd0fd.netlify.app">
-    <img alt="Bbang Blog Logo" src="./assets/bbang-logo.png" />
+    <img alt="Bbang Blog Logo" src="./assets/bbang-logo.png" width="280px" />
   </a>
 </p>
 <h1 align="center">
