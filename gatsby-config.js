@@ -3,7 +3,7 @@ const SITE_METADATA = Object.freeze({
   author: {
     name: "Name",
     position: "Position",
-    summary: "I'm Seokjin, your theme creator. ",
+    summary: "Summary",
   },
   description: "description",
   siteUrl: "https://github.com/seokkamoni",
