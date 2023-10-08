@@ -79,4 +79,8 @@ const StyledContactButton = styled.button`
   padding: 0 16px;
   color: ${({ theme }) => theme.colors.black};
   background-color: ${({ theme }) => theme.colors.lightGray};
+
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.mediumGray};
+  }
 `;
