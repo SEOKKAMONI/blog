@@ -18,7 +18,6 @@ type BlogPostTemplateProps = {
     site: { siteMetadata: SiteMetadata };
     markdownRemark: MarkdownRemark;
   };
-  location: string;
 };
 
 const BlogPostTemplate = ({

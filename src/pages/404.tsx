@@ -3,13 +3,10 @@ import MainLayout from "../components/MainLayout";
 import { SiteMetadata } from "../types/types";
 
 type NotFoundPageProps = {
-  data: {
-    site: { siteMetadata: SiteMetadata };
-  };
-  location: string;
+  data: { site: { siteMetadata: SiteMetadata } };
 };
 
-const NotFoundPage = ({ data, location }: NotFoundPageProps) => {
+const NotFoundPage = ({ data }: NotFoundPageProps) => {
   const siteTitle = data.site.siteMetadata.title;
 
   return <MainLayout title={siteTitle}>404: Not Found</MainLayout>;

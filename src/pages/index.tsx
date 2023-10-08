@@ -14,7 +14,6 @@ type AllPostPageProps = {
     site: { siteMetadata: SiteMetadata };
     allMarkdownRemark: AllMarkdownRemark;
   };
-  location: Location;
 };
 
 const AllPostPage = ({ data }: AllPostPageProps) => {
