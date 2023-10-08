@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
 import { graphql, useStaticQuery } from "gatsby";
-import { colors } from "../styles";
 import IconClose from "./icons/IconClose";
 
 type ContactOverlayProps = {
