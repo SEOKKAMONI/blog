@@ -55,13 +55,13 @@ const StyledPostHeader = styled.div`
 const StyledTitle = styled.span`
   font-size: 36px;
   font-weight: bold;
-  color: ${({ theme }) => theme.colors.gray900};
+  color: ${({ theme }) => theme.colors.black};
 `;
 
 const StyledDate = styled.span`
   font-size: 18px;
   font-weight: medium;
-  color: ${({ theme }) => theme.colors.gray700};
+  color: ${({ theme }) => theme.colors.gray};
 `;
 
 const StyledMarkdown = styled.div``;

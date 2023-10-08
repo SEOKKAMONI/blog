@@ -55,7 +55,7 @@ const StyledHeader = styled.header<{ isSticky: boolean }>`
   padding-right: 60px;
   background-color: ${({ theme }) => theme.colors.white};
   border-bottom: 1px solid
-    ${({ theme, isSticky }) => (isSticky ? theme.colors.gray200 : "none")};
+    ${({ theme, isSticky }) => (isSticky ? theme.colors.lightGray : "none")};
 
   @media screen and (max-width: 1100px) {
     padding-left: 32px;
@@ -77,6 +77,6 @@ const StyledContactButton = styled.button`
   font-size: 16px;
   font-weight: medium;
   padding: 0 16px;
-  color: #222;
-  background-color: "#F6F6F6";
+  color: ${({ theme }) => theme.colors.black};
+  background-color: ${({ theme }) => theme.colors.lightGray};
 `;

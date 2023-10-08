@@ -15,5 +15,5 @@ const StyledLogo = styled.span`
   cursor: pointer;
   font-size: 18px;
   font-weight: bold;
-  color: ${({ theme }) => theme.colors.gray800};
+  color: ${({ theme }) => theme.colors.black};
 `;

@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { graphql, useStaticQuery } from "gatsby";
+import { colors } from "../styles";
 import IconClose from "./icons/IconClose";
 
 type ContactOverlayProps = {
@@ -100,7 +101,7 @@ const StyledContact = styled.div`
   padding: 21px 37px;
   border-radius: 36px 36px 36px 0px;
   border: 2px solid rgba(255, 255, 255, 0.25);
-  color: #fff;
+  color: ${({ theme }) => theme.colors.white};
   font-size: 32px;
   font-weight: 600;
   background-color: rgba(255, 255, 255, 0.2);
@@ -123,7 +124,7 @@ const CloseButton = styled(IconClose)`
   width: 72px;
   height: 72px;
   cursor: pointer;
-  color: #d9d9d9;
+  color: ${({ theme }) => theme.colors.mediumGray};
 
   @media screen and (max-width: 1100px) {
     right: 32px;

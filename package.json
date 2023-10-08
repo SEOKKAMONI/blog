@@ -35,12 +35,15 @@
     "gatsby-post-gen": "^1.0.0",
     "prettier": "^2.8.8"
   },
-  "license": "MIT",
+  "license": "0BSD",
   "homepage": "https://github.com/letsdevelopseokjin/gatsby-starter-bbang-blog#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/letsdevelopseokjin/gatsby-starter-bbang-blog"
   },
+  "keywords": [
+    "gatsby"
+  ],
   "scripts": {
     "post": "gatsby-post-gen",
     "build": "gatsby build",

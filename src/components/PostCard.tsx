@@ -73,14 +73,14 @@ const StyledInfoWrapper = styled.div`
 `;
 
 const StyledTitle = styled.p`
-  color: #222;
+  color: ${({ theme }) => theme.colors.black};
   font-size: 24px;
   font-weight: medium;
   max-width: 80%;
 `;
 
 const StyledDate = styled.span`
-  color: #666;
+  color: ${({ theme }) => theme.colors.gray};
   font-size: 16px;
   font-weight: normal;
 `;

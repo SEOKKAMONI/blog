@@ -19,5 +19,5 @@ const StyledFooter = styled.footer`
   overflow: hidden;
   font-size: 18px;
   font-weight: normal;
-  color: ${({ theme }) => theme.colors.gray700};
+  color: ${({ theme }) => theme.colors.gray};
 `;

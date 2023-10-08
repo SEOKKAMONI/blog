@@ -82,7 +82,7 @@ const StyledNamePositionWrapper = styled.div`
 const StyledName = styled.span`
   font-size: 40px;
   font-weight: bold;
-  color: ${({ theme }) => theme.colors.gray900};
+  color: ${({ theme }) => theme.colors.black};
 
   @media screen and (max-width: 650px) {
     font-size: 32px;
@@ -92,7 +92,7 @@ const StyledName = styled.span`
 const StyledPosition = styled.span`
   font-size: 20px;
   font-weight: normal;
-  color: ${({ theme }) => theme.colors.gray900};
+  color: ${({ theme }) => theme.colors.black};
 
   @media screen and (max-width: 650px) {
     font-size: 16px;
@@ -100,7 +100,7 @@ const StyledPosition = styled.span`
 `;
 
 const StyledSummary = styled.p`
-  color: #666;
+  color: ${({ theme }) => theme.colors.gray};
   font-size: 16px;
   font-weight: normal;
 
