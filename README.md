@@ -1,3 +1,8 @@
+<p align="center">
+  <a href="https://statuesque-moonbeam-3bd0fd.netlify.app">
+    <img alt="Bbang Blog Logo" src="./assets/bbang-logo.png" />
+  </a>
+</p>
 <h1 align="center">
   Gatsby Starter: Bbang Blog
 </h1>
@@ -11,7 +16,7 @@ Kick off your project with this Bbang Blog theme. This starter ships with the ma
 1.  **Create a Gatsby site.**
 
     Use the Gatsby CLI to clone the site and install dependencies:
-   
+
     ```shell
     # create a new Gatsby site using the gatsby-starter-bbang-blog starter
     gatsby new gatsby-starter-bbang-blog https://github.com/SEOKKAMONI/gatsby-starter-bbang-blog
