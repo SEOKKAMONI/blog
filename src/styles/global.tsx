@@ -16,8 +16,8 @@ const globalStyle = css`
 export const GlobalStyle = () => {
   return (
     <>
-      <Global styles={globalStyle} />
       <Global styles={ResetCSS} />
+      <Global styles={globalStyle} />
     </>
   );
 };
