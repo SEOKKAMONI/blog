@@ -25,7 +25,7 @@ const StyledPostSection = styled.main`
   display: flex;
   flex-direction: column;
   gap: 72px;
-  max-width: 940px;
+  max-width: 720px;
   margin: auto;
   padding-top: 76px;
   padding-bottom: 76px;

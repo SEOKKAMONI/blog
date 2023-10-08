@@ -71,10 +71,19 @@ const StyledInfoWrapper = styled.div`
 `;
 
 const StyledTitle = styled.p`
-  color: ${({ theme }) => theme.colors.black};
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
   font-size: 24px;
   font-weight: medium;
-  max-width: 80%;
+  color: ${({ theme }) => theme.colors.black};
+
+  @media screen and (max-width: 650px) {
+    -webkit-line-clamp: 1;
+  }
 `;
 
 const StyledDate = styled.span`

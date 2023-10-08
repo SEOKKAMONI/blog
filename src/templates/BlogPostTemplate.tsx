@@ -9,6 +9,7 @@ import {
 import styled from "@emotion/styled";
 import PostLayout from "../components/PostLayout";
 import Seo from "../components/Seo";
+import PostNavigator from "../components/PostNavigator";
 
 type BlogPostTemplateProps = {
   data: {
@@ -40,6 +41,7 @@ const BlogPostTemplate = ({
         className="markdown-body"
         dangerouslySetInnerHTML={{ __html: html }}
       />
+      <PostNavigator prevPost={previous} nextPost={next} />
     </PostLayout>
   );
 };
@@ -93,12 +95,6 @@ export const pageQuery = graphql`
       }
       frontmatter {
         title
-        date(formatString: "YYYY-MM-DD")
-        thumbnail {
-          childImageSharp {
-            gatsbyImageData
-          }
-        }
       }
     }
     next: markdownRemark(id: { eq: $nextPostId }) {
@@ -107,12 +103,6 @@ export const pageQuery = graphql`
       }
       frontmatter {
         title
-        date(formatString: "YYYY-MM-DD")
-        thumbnail {
-          childImageSharp {
-            gatsbyImageData
-          }
-        }
       }
     }
   }

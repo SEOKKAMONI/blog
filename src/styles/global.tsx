@@ -5,6 +5,7 @@ import { ResetCSS } from "./reset";
 const globalStyle = css`
   * {
     font-family: Pretendard;
+    line-height: 120%;
     box-sizing: border-box;
   }
 

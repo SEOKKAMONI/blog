@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, graphql } from "gatsby";
+import { graphql } from "gatsby";
 
 import MainLayout from "../components/MainLayout";
 import { AllMarkdownRemark, SiteMetadata } from "../types/types";
@@ -26,7 +26,7 @@ const AllPostPage = ({ data }: AllPostPageProps) => {
       <Seo title="Bbang Blog" />
       <Bio />
       <StyledPostList>
-        {posts.map(post => {
+        {posts.map((post) => {
           const thumbnail = getImage(post.frontmatter.thumbnail);
           const title = post.frontmatter.title || post.fields.slug;
           const date = post.frontmatter.date;
