@@ -105,5 +105,6 @@ const StyledSummary = styled.p`
 
   @media screen and (max-width: 650px) {
     font-size: 12px;
+    text-align: center;
   }
 `;
