@@ -1,9 +1,8 @@
 import styled from "@emotion/styled";
-import { Link } from "gatsby";
-import { useEffect, useState } from "react";
-import Logo from "./Logo";
 import { useOverlay } from "@toss/use-overlay";
+import { useEffect, useState } from "react";
 import ContactOverlay from "./ContactOverlay";
+import Logo from "./Logo";
 
 const Header = () => {
   const [isSticky, setIsSticky] = useState(false);

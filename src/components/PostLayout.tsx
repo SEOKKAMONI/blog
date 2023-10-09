@@ -9,7 +9,7 @@ type PostLayoutProps = {
   children: ReactNode;
 };
 
-const PostLayout = ({ title, children }: PostLayoutProps) => {
+const PostLayout = ({ children }: PostLayoutProps) => {
   return (
     <>
       <Header />

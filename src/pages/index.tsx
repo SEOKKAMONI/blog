@@ -1,13 +1,13 @@
 import React from "react";
 import { graphql } from "gatsby";
 
-import MainLayout from "../components/MainLayout";
-import { AllMarkdownRemark, SiteMetadata } from "../types/types";
 import styled from "@emotion/styled";
-import PostCard from "../components/PostCard";
-import Bio from "../components/Bio";
 import { getImage } from "gatsby-plugin-image";
+import Bio from "../components/Bio";
+import MainLayout from "../components/MainLayout";
+import PostCard from "../components/PostCard";
 import Seo from "../components/Seo";
+import { AllMarkdownRemark, SiteMetadata } from "../types/types";
 
 type AllPostPageProps = {
   data: {
