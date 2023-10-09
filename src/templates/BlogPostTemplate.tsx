@@ -1,5 +1,8 @@
 import React from "react";
 import { graphql } from "gatsby";
+import PostLayout from "../components/PostLayout";
+import PostNavigator from "../components/PostNavigator";
+import Seo from "../components/Seo";
 import {
   Fields,
   Frontmatter,
@@ -7,9 +10,6 @@ import {
   SiteMetadata,
 } from "../types/types";
 import styled from "@emotion/styled";
-import PostLayout from "../components/PostLayout";
-import Seo from "../components/Seo";
-import PostNavigator from "../components/PostNavigator";
 
 type BlogPostTemplateProps = {
   data: {

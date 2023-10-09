@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { Link } from "gatsby";
-import { GatsbyImage, getImage, IGatsbyImageData } from "gatsby-plugin-image";
+import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
 
 type PostCardProps = {
   thumbnail?: IGatsbyImageData;
