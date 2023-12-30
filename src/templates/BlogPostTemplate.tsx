@@ -25,7 +25,7 @@ const BlogPostTemplate = ({
 }: BlogPostTemplateProps) => {
   const siteTitle = site.siteMetadata?.title;
   const title = post.frontmatter.title;
-  const description = post.frontmatter.description;
+  const description = post.frontmatter?.description;
   const date = post.frontmatter.date;
   const html = post.html;
 

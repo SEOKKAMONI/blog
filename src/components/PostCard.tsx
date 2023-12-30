@@ -19,7 +19,7 @@ const PostCard = ({ thumbnail, title, slug, date }: PostCardProps) => {
       {thumbnail && (
         <StyledThumbnailImage
           image={thumbnail}
-          alt={`${slug} Thumbnail Image`}
+          alt={`${slug} Thumbnail`}
         />
       )}
     </StyledPostCard>

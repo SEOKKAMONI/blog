@@ -26,7 +26,7 @@ const Bio = () => {
         width={150}
         height={150}
         style={{ borderRadius: "36px 36px 36px 0" }}
-        alt="Profile Image"
+        alt="Profile"
       />
       <StyledInfoWrapper>
         <StyledNamePositionWrapper>
@@ -60,7 +60,7 @@ const StyledBio = styled.div`
 const StyledInfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 34px;
+  gap: 18px;
 
   @media screen and (max-width: 650px) {
     gap: 24px;
@@ -70,7 +70,7 @@ const StyledInfoWrapper = styled.div`
 const StyledNamePositionWrapper = styled.div`
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 8px;
 
   @media screen and (max-width: 650px) {
     flex-direction: column;

@@ -15,10 +15,10 @@ export type MarkdownRemark = {
 };
 
 export type Frontmatter = {
-  thumbnail: IGatsbyImageData;
+  thumbnail?: IGatsbyImageData;
   date: string;
   title: string;
-  description: string;
+  description?: string;
 };
 
 export type Fields = {

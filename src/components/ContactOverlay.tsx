@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { graphql, useStaticQuery } from "gatsby";
-import IconClose from "./icons/IconClose";
+import IconClose from "./Icons/Close";
 
 type ContactOverlayProps = {
   isOpen: boolean;

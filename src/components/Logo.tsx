@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { Link } from "gatsby";
 
 const Logo = () => {
-  return <StyledLogo to="/">Bbang Blog</StyledLogo>;
+  return <StyledLogo to="/">seokkamoni.blog</StyledLogo>;
 };
 
 export default Logo;

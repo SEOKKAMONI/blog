@@ -22,11 +22,11 @@ const AllPostPage = ({ data }: AllPostPageProps) => {
 
   return (
     <MainLayout title={siteTitle}>
-      <Seo title="Bbang Blog" />
+      <Seo title="김석진 블로그" />
       <Bio />
       <StyledPostList>
         {posts.map((post) => {
-          const thumbnail = getImage(post.frontmatter.thumbnail);
+          const thumbnail = post.frontmatter.thumbnail ? getImage(post.frontmatter.thumbnail) : undefined;
           const title = post.frontmatter.title || post.fields.slug;
           const date = post.frontmatter.date;
           const slug = post.fields.slug;

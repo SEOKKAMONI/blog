@@ -1,17 +1,15 @@
 const SITE_METADATA = Object.freeze({
-  title: "Title",
   author: {
-    name: "Name",
-    position: "Position",
-    summary: "Summary",
+    name: "김석진",
+    position: "Frontend Developer",
+    summary: "세상에 긍정적인 영향을 주고 싶은 개발자 김석진입니다.",
   },
-  description: "description",
-  siteUrl: "https://github.com/seokkamoni",
+  siteUrl: "https://github.com/seokkamoni/seokkamoni.blog",
   social: {
-    phoneNumber: "010-1234-5678",
-    gmail: "gmail",
-    github: "github-id",
-    instagram: "instagram-id",
+    phoneNumber: "010-4826-0279",
+    gmail: "sj01048260279",
+    github: "seokkamoni",
+    instagram: "sj20060706",
   },
 });
 
@@ -119,12 +117,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Bbang Blog`,
-        short_name: `Bbang blog`,
+        name: `seokkamoni blog`,
+        short_name: `seokkamoni blog`,
         start_url: `/`,
         background_color: `#ffffff`,
-        display: `minimal-ui`,
-        icon: `${__dirname}/assets/icon.png`, // This path is relative to the root of the site.
+        icon: `${__dirname}/assets/icon.png`,
       },
     },
   ],
