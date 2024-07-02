@@ -97,7 +97,7 @@ const StyledSocial = styled.div`
   flex-shrink: 0;
   width: 100%;
   height: 100px;
-  padding: 21px 37px;
+  padding: 22px 36px;
   border-radius: 36px 36px 36px 0px;
   border: 2px solid rgba(255, 255, 255, 0.25);
   color: ${({ theme }) => theme.colors.white};
@@ -113,6 +113,7 @@ const StyledSocial = styled.div`
   @media screen and (max-width: 650px) {
     height: 56px;
     font-size: 16px;
+    padding: 16px 24px;
   }
 `;
 
