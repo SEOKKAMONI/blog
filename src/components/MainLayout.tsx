@@ -26,6 +26,8 @@ const StyledMainSection = styled.main`
   flex-direction: column;
   align-items: center;
   max-width: 940px;
+  min-height: 100vh;
+  height: 100%;
   margin: auto;
   padding-top: 76px;
   padding-bottom: 76px;
