@@ -29,6 +29,9 @@ importers:
       gatsby-plugin-feed:
         specifier: ^5.12.0
         version: 5.13.1(gatsby@5.13.6(babel-eslint@10.1.0(eslint@7.32.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@0.21.3)(typescript@5.5.3))(graphql@16.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      gatsby-plugin-gtag:
+        specifier: ^1.0.13
+        version: 1.0.13(gatsby@5.13.6(babel-eslint@10.1.0(eslint@7.32.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@0.21.3)(typescript@5.5.3))
       gatsby-plugin-image:
         specifier: ^3.12.0
         version: 3.13.1(@babel/core@7.24.7)(gatsby-plugin-sharp@5.13.1(gatsby@5.13.6(babel-eslint@10.1.0(eslint@7.32.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@0.21.3)(typescript@5.5.3))(graphql@16.9.0))(gatsby-source-filesystem@5.13.1(gatsby@5.13.6(babel-eslint@10.1.0(eslint@7.32.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@0.21.3)(typescript@5.5.3)))(gatsby@5.13.6(babel-eslint@10.1.0(eslint@7.32.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@0.21.3)(typescript@5.5.3))(graphql@16.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -3173,6 +3176,11 @@ packages:
       gatsby: ^5.0.0-next
       react: ^18.0.0 || ^0.0.0
       react-dom: ^18.0.0 || ^0.0.0
+
+  gatsby-plugin-gtag@1.0.13:
+    resolution: {integrity: sha512-Oul6O67klajrEjkkF1diD228SmyUWsAwTq/1tYq41vBwmyNiPk4dhk8K93rrNQ5d5zesSv+awBeGBa503tQqGw==}
+    peerDependencies:
+      gatsby: '>2.0.0-alpha'
 
   gatsby-plugin-image@3.13.1:
     resolution: {integrity: sha512-v5jGXxjr//iLk7LzpW6RW/9H4KNVezxee2Sgy9mxvdvekTuFQLYoQmtk2jOZINMZMP3Vm+Rl3MqWWVMfhHuWFw==}
@@ -10249,6 +10257,10 @@ snapshots:
       rss: 1.2.2
     transitivePeerDependencies:
       - graphql
+
+  gatsby-plugin-gtag@1.0.13(gatsby@5.13.6(babel-eslint@10.1.0(eslint@7.32.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@0.21.3)(typescript@5.5.3)):
+    dependencies:
+      gatsby: 5.13.6(babel-eslint@10.1.0(eslint@7.32.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@0.21.3)(typescript@5.5.3)
 
   gatsby-plugin-image@3.13.1(@babel/core@7.24.7)(gatsby-plugin-sharp@5.13.1(gatsby@5.13.6(babel-eslint@10.1.0(eslint@7.32.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@0.21.3)(typescript@5.5.3))(graphql@16.9.0))(gatsby-source-filesystem@5.13.1(gatsby@5.13.6(babel-eslint@10.1.0(eslint@7.32.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@0.21.3)(typescript@5.5.3)))(gatsby@5.13.6(babel-eslint@10.1.0(eslint@7.32.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@0.21.3)(typescript@5.5.3))(graphql@16.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:

@@ -31,6 +31,13 @@ module.exports = {
       },
     },
     {
+      resolve: "gatsby-plugin-gtag",
+      options: {
+        trackingId: "G-ZCQ9YSRPSY",
+        head: true,
+      },
+    },
+    {
       resolve: "gatsby-plugin-web-font-loader",
       options: {
         custom: {
