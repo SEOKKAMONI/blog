@@ -5,11 +5,10 @@ import Footer from "./Footer";
 import Header from "./Header";
 
 type MainLayoutProps = {
-  title: string;
   children: ReactNode;
 };
 
-const MainLayout = ({ title, children }: MainLayoutProps) => {
+const MainLayout = ({ children }: MainLayoutProps) => {
   return (
     <>
       <Header />

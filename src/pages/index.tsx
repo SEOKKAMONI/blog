@@ -11,11 +11,6 @@ import { Fields, Frontmatter, SiteMetadata } from "../types/types";
 
 export const pageQuery = graphql`
   {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
       nodes {
         fields {
@@ -37,7 +32,6 @@ export const pageQuery = graphql`
 `;
 
 type PageQuery = {
-  site: { siteMetadata: { title: SiteMetadata["title"] } };
   allMarkdownRemark: {
     nodes: {
       fields: Fields;
@@ -51,11 +45,10 @@ type AllPostPageProps = {
 };
 
 const AllPostPage = ({ data }: AllPostPageProps) => {
-  const siteTitle = data.site.siteMetadata.title;
   const posts = data.allMarkdownRemark.nodes;
 
   return (
-    <MainLayout title={siteTitle}>
+    <MainLayout>
       <Seo title="김석진 블로그" />
       <Bio />
       <StyledPostList>
