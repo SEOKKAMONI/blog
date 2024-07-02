@@ -1,12 +1,11 @@
 import styled from "@emotion/styled";
-import { useOverlay } from "@toss/use-overlay";
+import { overlay } from "overlay-kit";
 import { useEffect, useState } from "react";
 import ContactOverlay from "./ContactOverlay";
 import Logo from "./Logo";
 
 const Header = () => {
   const [isSticky, setIsSticky] = useState(false);
-  const overlay = useOverlay();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,10 +23,11 @@ const Header = () => {
     };
   }, []);
 
-  const openContactOverlay = () =>
+  const openContactOverlay = () =>{
     overlay.open(({ isOpen, close }) => (
       <ContactOverlay isOpen={isOpen} onClose={close} />
     ));
+  }
 
   return (
     <StyledHeader isSticky={isSticky}>

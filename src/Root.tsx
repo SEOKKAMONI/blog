@@ -1,7 +1,7 @@
 import { GlobalStyle, theme } from "./styles";
 import { ReactNode } from "react";
 import { ThemeProvider } from "@emotion/react";
-import { OverlayProvider } from "@toss/use-overlay";
+import { OverlayProvider } from "overlay-kit";
 
 type RootProps = {
   children: ReactNode;
