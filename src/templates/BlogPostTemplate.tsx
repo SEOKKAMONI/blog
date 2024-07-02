@@ -10,6 +10,7 @@ import {
   SiteMetadata,
 } from "../types/types";
 import styled from "@emotion/styled";
+import Utterances from "../components/Utterances";
 
 export const pageQuery = graphql`
   query BlogPostBySlug(
@@ -94,6 +95,7 @@ const BlogPostTemplate = ({
         dangerouslySetInnerHTML={{ __html: html }}
       />
       <PostNavigator prevPost={previous} nextPost={next} />
+      <Utterances />
     </PostLayout>
   );
 };
