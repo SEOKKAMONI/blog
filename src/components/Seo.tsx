@@ -1,6 +1,17 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { Helmet } from "react-helmet";
+import { Author, SiteMetadata } from "../types/types";
+
+type SeoQuery = {
+  site: {
+    siteMetadata: {
+      title: SiteMetadata["title"];
+      description: SiteMetadata["description"];
+      author: Author;
+    };
+  };
+};
 
 type SeoProps = {
   title: string;
@@ -8,7 +19,7 @@ type SeoProps = {
 };
 
 const Seo = ({ title, description }: SeoProps) => {
-  const { site } = useStaticQuery(
+  const data = useStaticQuery<SeoQuery>(
     graphql`
       query {
         site {
@@ -24,13 +35,13 @@ const Seo = ({ title, description }: SeoProps) => {
     `
   );
 
-  const metaDescription = description || site.siteMetadata.description;
-  const defaultTitle = site.siteMetadata.title;
-  const name = site.siteMetadata.author.name;
+  const defaultTitle = data.site.siteMetadata.title;
+  const metaDescription = description || data.site.siteMetadata.description;
+  const author = data.site.siteMetadata.author.name;
 
   return (
     <Helmet
-      htmlAttributes={{ lang: "en" }}
+      htmlAttributes={{ lang: "kr" }}
       title={title}
       defaultTitle={defaultTitle}
       meta={[
@@ -43,16 +54,16 @@ const Seo = ({ title, description }: SeoProps) => {
           content: title,
         },
         {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
           property: `og:description`,
           content: metaDescription,
         },
         {
+          name: `description`,
+          content: metaDescription,
+        },
+        {
           property: "og:author",
-          content: name,
+          content: author,
         },
         {
           property: `og:type`,

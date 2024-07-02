@@ -1,7 +1,6 @@
 ---
 thumbnail: "./thumbnail.jpg"
 title: "Markdown Test"
-description: "Markdown Test"
 date: "2023-10-07"
 ---
 

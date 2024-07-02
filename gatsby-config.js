@@ -4,11 +4,11 @@ const SITE_METADATA = Object.freeze({
     position: "Frontend Developer",
     summary: "세상에 긍정적인 영향을 주고 싶은 개발자 김석진입니다.",
   },
-  siteUrl: "https://github.com/seokkamoni/seokkamoni.blog",
-  social: {
+  siteUrl: "https://github.com/SEOKKAMONI/SEOKKAMONI.blog",
+  socials: {
     phoneNumber: "010-4826-0279",
     gmail: "sj01048260279",
-    github: "seokkamoni",
+    github: "SEOKKAMONI",
     instagram: "sj20060706",
   },
 });
@@ -17,16 +17,16 @@ module.exports = {
   siteMetadata: SITE_METADATA,
   plugins: [
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: `blog`,
+        name: "blog",
         path: `${__dirname}/content/blog`,
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: `assets`,
+        name: "assets",
         path: `${__dirname}/assets`,
       },
     },
@@ -42,31 +42,25 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: "gatsby-transformer-remark",
       options: {
         plugins: [
           {
-            resolve: `gatsby-remark-images`,
+            resolve: "gatsby-remark-images",
             options: {
               maxWidth: 630,
             },
           },
-          {
-            resolve: `gatsby-remark-responsive-iframe`,
-            options: {
-              wrapperStyle: `margin-bottom: 1.0725rem`,
-            },
-          },
-          `gatsby-remark-prismjs`,
-          `gatsby-plugin-emotion`,
-          `gatsby-plugin-image`,
+          "gatsby-remark-prismjs",
+          "gatsby-plugin-emotion",
+          "gatsby-plugin-image",
         ],
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-sharp",
     {
-      resolve: `gatsby-plugin-feed`,
+      resolve: "gatsby-plugin-feed",
       options: {
         query: `
           {
@@ -75,7 +69,6 @@ module.exports = {
                 title
                 description
                 siteUrl
-                site_url: siteUrl
               }
             }
           }
@@ -83,10 +76,11 @@ module.exports = {
         feeds: [
           {
             serialize: ({ query: { site, allMarkdownRemark } }) => {
-              return allMarkdownRemark.nodes.map(node => {
+              return allMarkdownRemark.nodes.map((node) => {
                 return Object.assign({}, node.frontmatter, {
-                  description: node.excerpt,
-                  date: node.frontmatter.date,
+                  title: node.frontmatter.title,
+                  description: node.frontmatter.description,
+                  date: new Date(node.frontmatter.date),
                   url: site.siteMetadata.siteUrl + node.fields.slug,
                   guid: site.siteMetadata.siteUrl + node.fields.slug,
                   custom_elements: [{ "content:encoded": node.html }],
@@ -94,33 +88,33 @@ module.exports = {
               });
             },
             query: `{
-              allMarkdownRemark(sort: {frontmatter: {date: DESC}}) {
+              allMarkdownRemark(sort: { frontmatter: { date: DESC }}) {
                 nodes {
-                  excerpt
                   html
                   fields {
                     slug
                   }
                   frontmatter {
                     title
+                    description
                     date
                   }
                 }
               }
             }`,
             output: "/rss.xml",
-            title: "Gatsby Starter Blog RSS Feed",
+            title: "SEOKKAMONI Blog RSS Feed",
           },
         ],
       },
     },
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: "gatsby-plugin-manifest",
       options: {
-        name: `seokkamoni blog`,
-        short_name: `seokkamoni blog`,
-        start_url: `/`,
-        background_color: `#ffffff`,
+        name: "SEOKKAMONI BLOG",
+        short_name: "BLOG",
+        start_url: "/",
+        background_color: "#FFFFFF",
         icon: `${__dirname}/assets/icon.png`,
       },
     },

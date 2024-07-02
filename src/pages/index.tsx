@@ -7,17 +7,51 @@ import Bio from "../components/Bio";
 import MainLayout from "../components/MainLayout";
 import PostCard from "../components/PostCard";
 import Seo from "../components/Seo";
-import { AllMarkdownRemark, SiteMetadata } from "../types/types";
+import { Fields, Frontmatter, SiteMetadata } from "../types/types";
 
-type AllPostPageProps = {
-  data: {
-    site: { siteMetadata: SiteMetadata };
-    allMarkdownRemark: AllMarkdownRemark;
+export const pageQuery = graphql`
+  {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+    allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
+      nodes {
+        fields {
+          slug
+        }
+        frontmatter {
+          thumbnail {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
+          title
+          description
+          date(formatString: "YYYY-MM-DD")
+        }
+      }
+    }
+  }
+`;
+
+type PageQuery = {
+  site: { siteMetadata: { title: SiteMetadata["title"] } };
+  allMarkdownRemark: {
+    nodes: {
+      fields: Fields;
+      frontmatter: Frontmatter;
+    }[];
   };
 };
 
+type AllPostPageProps = {
+  data: PageQuery;
+};
+
 const AllPostPage = ({ data }: AllPostPageProps) => {
-  const siteTitle = data.site.siteMetadata?.title;
+  const siteTitle = data.site.siteMetadata.title;
   const posts = data.allMarkdownRemark.nodes;
 
   return (
@@ -26,17 +60,21 @@ const AllPostPage = ({ data }: AllPostPageProps) => {
       <Bio />
       <StyledPostList>
         {posts.map((post) => {
-          const thumbnail = post.frontmatter.thumbnail ? getImage(post.frontmatter.thumbnail) : undefined;
+          const thumbnail = post.frontmatter?.thumbnail
+            ? getImage(post.frontmatter.thumbnail)
+            : null;
           const title = post.frontmatter.title || post.fields.slug;
+          const description = post.frontmatter?.description;
           const date = post.frontmatter.date;
           const slug = post.fields.slug;
 
           return (
             <PostCard
               key={slug}
+              title={title}
+              description={description}
               thumbnail={thumbnail}
               slug={slug}
-              title={title}
               date={date}
             />
           );
@@ -55,31 +93,4 @@ const StyledPostList = styled.div`
   gap: 48px;
   width: 100%;
   padding: 40px 0;
-`;
-
-export const pageQuery = graphql`
-  {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
-      nodes {
-        excerpt
-        fields {
-          slug
-        }
-        frontmatter {
-          thumbnail {
-            childImageSharp {
-              gatsbyImageData
-            }
-          }
-          title
-          date(formatString: "YYYY-MM-DD")
-        }
-      }
-    }
-  }
 `;

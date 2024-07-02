@@ -3,24 +3,29 @@ import { Link } from "gatsby";
 import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
 
 type PostCardProps = {
-  thumbnail?: IGatsbyImageData;
+  thumbnail?: IGatsbyImageData | null;
   title: string;
+  description?: string;
   slug: string;
   date: string;
 };
 
-const PostCard = ({ thumbnail, title, slug, date }: PostCardProps) => {
+const PostCard = ({
+  thumbnail,
+  title,
+  description,
+  slug,
+  date,
+}: PostCardProps) => {
   return (
     <StyledPostCard to={slug}>
       <StyledInfoWrapper>
         <StyledTitle>{title}</StyledTitle>
+        {description && <StyledDescription>{description}</StyledDescription>}
         <StyledDate>{date}</StyledDate>
       </StyledInfoWrapper>
       {thumbnail && (
-        <StyledThumbnailImage
-          image={thumbnail}
-          alt={`${slug} Thumbnail`}
-        />
+        <StyledThumbnailImage image={thumbnail} alt={`${slug} Thumbnail`} />
       )}
     </StyledPostCard>
   );
@@ -83,6 +88,22 @@ const StyledTitle = styled.p`
 
   @media screen and (max-width: 650px) {
     -webkit-line-clamp: 1;
+  }
+`;
+
+const StyledDescription = styled.p`
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  font-size: 14px;
+  font-weight: medium;
+  color: ${({ theme }) => theme.colors.gray};
+
+  @media screen and (max-width: 650px) {
+    -webkit-line-clamp: 2;
   }
 `;
 

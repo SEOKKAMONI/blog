@@ -1,10 +1,10 @@
 {
   "private": true,
-  "name": "seokkamoni.blog",
+  "name": "blog",
   "version": "1.0.0",
   "author": "kimseokjin",
   "bugs": {
-    "url": "https://github.com/SEOKKAMONI/seokkamoni.blog/issues"
+    "url": "https://github.com/SEOKKAMONI/blog/issues"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
@@ -21,7 +21,6 @@
     "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-remark-images": "^7.12.0",
     "gatsby-remark-prismjs": "^7.12.0",
-    "gatsby-remark-responsive-iframe": "^6.12.0",
     "gatsby-source-filesystem": "^5.12.0",
     "gatsby-transformer-remark": "^6.12.0",
     "gatsby-transformer-sharp": "^5.12.0",
@@ -36,10 +35,10 @@
     "prettier": "^2.8.8"
   },
   "license": "0BSD",
-  "homepage": "https://github.com/SEOKKAMONI/seokkamoni.blog#readme",
+  "homepage": "https://github.com/SEOKKAMONI/blog#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SEOKKAMONI/seokkamoni.blog"
+    "url": "git+https://github.com/SEOKKAMONI/blog"
   },
   "keywords": [
     "gatsby"
@@ -48,10 +47,10 @@
     "post": "gatsby-post-gen",
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   }
 }

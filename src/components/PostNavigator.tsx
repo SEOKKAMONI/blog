@@ -3,30 +3,38 @@ import { Link } from "gatsby";
 import { Fields, Frontmatter } from "../types/types";
 
 type PostNavigatorProps = {
-  prevPost: { fields: Fields; frontmatter: Frontmatter };
-  nextPost: { fields: Fields; frontmatter: Frontmatter };
+  prevPost?: {
+    fields: { slug: Fields["slug"] };
+    frontmatter: { title: Frontmatter["title"] };
+  };
+  nextPost?: {
+    fields: { slug: Fields["slug"] };
+    frontmatter: { title: Frontmatter["title"] };
+  };
 };
 
 const PostNavigator = ({ prevPost, nextPost }: PostNavigatorProps) => {
   const prevPostSlug = prevPost?.fields.slug;
   const prevPostTitle = prevPost?.frontmatter.title;
-
   const nextPostSlug = nextPost?.fields.slug;
   const nextPostTitle = nextPost?.frontmatter.title;
 
+  const isPrevPost = prevPostSlug && prevPostTitle;
+  const isNextPost = nextPostSlug && nextPostTitle;
+
   return (
     <StyledPostNavigator>
-      {prevPost && (
-        <StyledPostCard to={prevPostSlug}>
+      {isPrevPost && (
+        <StyledPrevPostLink to={prevPostSlug}>
           <StyledDirection>Previous Post</StyledDirection>
           <StyledTitle>{prevPostTitle}</StyledTitle>
-        </StyledPostCard>
+        </StyledPrevPostLink>
       )}
-      {nextPost && (
-        <StyledPostCard to={nextPostSlug}>
+      {isNextPost && (
+        <StyledNextPostLink to={nextPostSlug}>
           <StyledDirection>Next Post</StyledDirection>
           <StyledTitle>{nextPostTitle}</StyledTitle>
-        </StyledPostCard>
+        </StyledNextPostLink>
       )}
     </StyledPostNavigator>
   );
@@ -35,18 +43,38 @@ const PostNavigator = ({ prevPost, nextPost }: PostNavigatorProps) => {
 export default PostNavigator;
 
 const StyledPostNavigator = styled.div`
-  display: grid;
-  width: 100%;
-  grid-template-columns: 49.3% 49.3%;
-  column-gap: 1.4%;
-`;
-
-const StyledPostCard = styled(Link)`
+  position: relative;
   display: flex;
-  flex-direction: column;
   gap: 12px;
   width: 100%;
   height: 105px;
+`;
+
+const StyledPrevPostLink = styled(Link)`
+  position: absolute;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: calc(50% - 6px);
+  height: 100%;
+  padding: 16px;
+  border-radius: 8px;
+  background-color: ${({ theme }) => theme.colors.lightGray};
+
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.mediumGray};
+  }
+`;
+
+const StyledNextPostLink = styled(Link)`
+  position: absolute;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: calc(50% - 6px);
+  height: 100%;
   padding: 16px;
   border-radius: 8px;
   background-color: ${({ theme }) => theme.colors.lightGray};

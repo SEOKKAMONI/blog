@@ -1,28 +1,28 @@
 {
-    "compilerOptions": {
-      "target": "ES6",
-      "lib": ["dom", "dom.iterable"],
-      "allowJs": true,
-      "baseUrl": ".",
-      "paths": {
-        "@/*": ["./*"]
-      },
-      "skipLibCheck": true,
-      "strict": true,
-      "forceConsistentCasingInFileNames": true,
-      "noEmit": true,
-      "esModuleInterop": true,
-      "module": "esnext",
-      "moduleResolution": "node",
-      "resolveJsonModule": true,
-      "isolatedModules": true,
-      "jsx": "preserve",
-      "incremental": true,
-      "jsxImportSource": "@emotion/react"
+  "compilerOptions": {
+    "target": "ES6",
+    "lib": ["dom", "dom.iterable"],
+    "allowJs": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"]
     },
-    "rules": {
-      "no-unused-variable": true
-    },
-    "include": ["**/*.ts", "**/*.tsx"],
-    "exclude": ["node_modules"]
-  }
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "jsxImportSource": "@emotion/react"
+  },
+  "rules": {
+    "no-unused-variable": true
+  },
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
+}

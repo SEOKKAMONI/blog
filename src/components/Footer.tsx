@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 const Footer = () => {
   return (
     <StyledFooter>
-      © {new Date().getFullYear()}. Kimseokjin all rights reserved.
+      © {new Date().getFullYear()}. SEOKKAMONI all rights reserved.
     </StyledFooter>
   );
 };

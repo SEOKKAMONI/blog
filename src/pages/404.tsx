@@ -2,18 +2,6 @@ import { graphql } from "gatsby";
 import MainLayout from "../components/MainLayout";
 import { SiteMetadata } from "../types/types";
 
-type NotFoundPageProps = {
-  data: { site: { siteMetadata: SiteMetadata } };
-};
-
-const NotFoundPage = ({ data }: NotFoundPageProps) => {
-  const siteTitle = data.site.siteMetadata.title;
-
-  return <MainLayout title={siteTitle}>404: Not Found</MainLayout>;
-};
-
-export default NotFoundPage;
-
 export const pageQuery = graphql`
   query {
     site {
@@ -23,3 +11,17 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+type PageQuery = { site: { siteMetadata: { title: SiteMetadata["title"] } } };
+
+type NotFoundPageProps = {
+  data: PageQuery;
+};
+
+const NotFoundPage = ({ data }: NotFoundPageProps) => {
+  const siteTitle = data.site.siteMetadata.title;
+
+  return <MainLayout title={siteTitle}>404: Not Found</MainLayout>;
+};
+
+export default NotFoundPage;

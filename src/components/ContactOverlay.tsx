@@ -1,6 +1,15 @@
 import styled from "@emotion/styled";
 import { graphql, useStaticQuery } from "gatsby";
-import IconClose from "./Icons/Close";
+import IconClose from "./Icons/IconClose";
+import { Socials } from "../types/types";
+
+type ContactOverlayQuery = {
+  site: {
+    siteMetadata: {
+      socials: Socials;
+    };
+  };
+};
 
 type ContactOverlayProps = {
   isOpen: boolean;
@@ -8,11 +17,11 @@ type ContactOverlayProps = {
 };
 
 const ContactOverlay = ({ isOpen, onClose }: ContactOverlayProps) => {
-  const data = useStaticQuery(graphql`
+  const data = useStaticQuery<ContactOverlayQuery>(graphql`
     query ContactOverlayQuery {
       site {
         siteMetadata {
-          social {
+          socials {
             phoneNumber
             gmail
             github
@@ -23,24 +32,15 @@ const ContactOverlay = ({ isOpen, onClose }: ContactOverlayProps) => {
     }
   `);
 
-  const social = data.site.siteMetadata?.social;
+  const socials: Record<string, string> = data.site.siteMetadata?.socials;
 
   return (
     <StyledContactOverlay isOpen={isOpen}>
       <CloseButton onClick={onClose} />
       <StyledContactWrapper>
-        {social.phoneNumber && (
-          <StyledContact>{social.phoneNumber}</StyledContact>
-        )}
-        {social.gmail && (
-          <StyledContact>{social.gmail}@gmail.com</StyledContact>
-        )}
-        {social.github && (
-          <StyledContact>github.com/{social.github}</StyledContact>
-        )}
-        {social.instagram && (
-          <StyledContact>instagram.com/{social.instagram}</StyledContact>
-        )}
+        {Object.values(socials).map((social) => (
+          <StyledSocial>{social}</StyledSocial>
+        ))}
       </StyledContactWrapper>
     </StyledContactOverlay>
   );
@@ -91,7 +91,7 @@ const StyledContactWrapper = styled.div`
   }
 `;
 
-const StyledContact = styled.div`
+const StyledSocial = styled.div`
   display: flex;
   align-items: center;
   flex-shrink: 0;

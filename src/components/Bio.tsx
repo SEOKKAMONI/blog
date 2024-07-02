@@ -1,9 +1,18 @@
 import styled from "@emotion/styled";
 import { graphql, useStaticQuery } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
+import { Author, SiteMetadata } from "../types/types";
+
+type BioQuery = {
+  site: {
+    siteMetadata: {
+      author: Author;
+    };
+  };
+};
 
 const Bio = () => {
-  const data = useStaticQuery(graphql`
+  const data = useStaticQuery<BioQuery>(graphql`
     query BioQuery {
       site {
         siteMetadata {
@@ -60,11 +69,7 @@ const StyledBio = styled.div`
 const StyledInfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 18px;
-
-  @media screen and (max-width: 650px) {
-    gap: 24px;
-  }
+  gap: 14px;
 `;
 
 const StyledNamePositionWrapper = styled.div`

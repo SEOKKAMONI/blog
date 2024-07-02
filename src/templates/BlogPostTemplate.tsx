@@ -11,13 +11,66 @@ import {
 } from "../types/types";
 import styled from "@emotion/styled";
 
-type BlogPostTemplateProps = {
-  data: {
-    previous: { fields: Fields; frontmatter: Frontmatter };
-    next: { fields: Fields; frontmatter: Frontmatter };
-    site: { siteMetadata: SiteMetadata };
-    markdownRemark: MarkdownRemark;
+export const pageQuery = graphql`
+  query BlogPostBySlug(
+    $id: String!
+    $previousPostId: String
+    $nextPostId: String
+  ) {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+    markdownRemark(id: { eq: $id }) {
+      html
+      frontmatter {
+        title
+        description
+        date(formatString: "YYYY-MM-DD")
+      }
+    }
+    previous: markdownRemark(id: { eq: $previousPostId }) {
+      fields {
+        slug
+      }
+      frontmatter {
+        title
+      }
+    }
+    next: markdownRemark(id: { eq: $nextPostId }) {
+      fields {
+        slug
+      }
+      frontmatter {
+        title
+      }
+    }
+  }
+`;
+
+type PageQuery = {
+  previous: {
+    fields: { slug: Fields["slug"] };
+    frontmatter: { title: Frontmatter["title"] };
   };
+  next: {
+    fields: { slug: Fields["slug"] };
+    frontmatter: { title: Frontmatter["title"] };
+  };
+  site: { siteMetadata: { title: SiteMetadata["title"] } };
+  markdownRemark: {
+    html: MarkdownRemark["html"];
+    frontmatter: {
+      title: Frontmatter["title"];
+      description: Frontmatter["description"];
+      date: Frontmatter["date"];
+    };
+  };
+};
+
+type BlogPostTemplateProps = {
+  data: PageQuery;
 };
 
 const BlogPostTemplate = ({
@@ -66,43 +119,3 @@ const StyledDate = styled.span`
 `;
 
 const StyledMarkdown = styled.div``;
-
-export const pageQuery = graphql`
-  query BlogPostBySlug(
-    $id: String!
-    $previousPostId: String
-    $nextPostId: String
-  ) {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    markdownRemark(id: { eq: $id }) {
-      id
-      excerpt(pruneLength: 160)
-      html
-      frontmatter {
-        title
-        description
-        date(formatString: "YYYY-MM-DD")
-      }
-    }
-    previous: markdownRemark(id: { eq: $previousPostId }) {
-      fields {
-        slug
-      }
-      frontmatter {
-        title
-      }
-    }
-    next: markdownRemark(id: { eq: $nextPostId }) {
-      fields {
-        slug
-      }
-      frontmatter {
-        title
-      }
-    }
-  }
-`;
