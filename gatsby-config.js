@@ -7,9 +7,9 @@ const SITE_METADATA = Object.freeze({
   siteUrl: "https://github.com/SEOKKAMONI/SEOKKAMONI.blog",
   socials: {
     phoneNumber: "010-4826-0279",
-    gmail: "sj01048260279",
-    github: "SEOKKAMONI",
-    instagram: "sj20060706",
+    gmail: "sj01048260279@gmail.com",
+    github: "github.com/SEOKKAMONI",
+    instagram: "instagram.com/sj20060706",
   },
 });
 
