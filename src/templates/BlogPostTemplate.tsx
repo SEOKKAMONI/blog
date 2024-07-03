@@ -94,7 +94,7 @@ const BlogPostTemplate = ({
         className="markdown-body"
         dangerouslySetInnerHTML={{ __html: html }}
       />
-      <PostNavigator prevPost={previous} nextPost={next} />
+      {!!previous || !!next && <PostNavigator prevPost={previous} nextPost={next} />}
       <Utterances />
     </PostLayout>
   );
