@@ -31,7 +31,7 @@ const Bio = () => {
   return (
     <StyledBio>
       <StaticImage
-        src="../../assets/profile.png"
+        src="https://github.com/SEOKKAMONI.png"
         width={150}
         height={150}
         style={{ borderRadius: "36px 36px 36px 0" }}
