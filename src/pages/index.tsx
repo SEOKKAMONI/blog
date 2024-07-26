@@ -83,7 +83,7 @@ const StyledPostList = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 48px;
+  gap: 24px;
   width: 100%;
   padding: 40px 0;
 `;
