@@ -2,7 +2,7 @@ const SITE_METADATA = Object.freeze({
   author: {
     name: "김석진",
     position: "Frontend Developer",
-    summary: "세상에 긍정적인 영향을 주고 싶은 개발자 김석진입니다.",
+    summary: "김석진의 (기술 블로그 ❌, 주접 블로그 ✅)",
   },
   siteUrl: "https://github.com/SEOKKAMONI/SEOKKAMONI.blog",
   socials: {
