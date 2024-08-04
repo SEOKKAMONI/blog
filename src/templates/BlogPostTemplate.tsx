@@ -83,6 +83,8 @@ const BlogPostTemplate = ({
   const date = post.frontmatter.date;
   const html = post.html;
 
+  const isShowingPostNavigator = Boolean(previous || next)
+
   return (
     <PostLayout title={siteTitle}>
       <Seo title={title} description={description} />
@@ -94,7 +96,7 @@ const BlogPostTemplate = ({
         className="markdown-body"
         dangerouslySetInnerHTML={{ __html: html }}
       />
-      {!!previous || !!next && <PostNavigator prevPost={previous} nextPost={next} />}
+      {isShowingPostNavigator && <PostNavigator prevPost={previous} nextPost={next} />}
       <Utterances />
     </PostLayout>
   );
