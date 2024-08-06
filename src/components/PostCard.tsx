@@ -38,19 +38,11 @@ const StyledPostCard = styled(Link)`
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  height: 180px;
+  height: 140px;
   transition: all 0.3s ease-in-out 0s;
 
   &:hover {
     transform: translateY(-8px);
-  }
-
-  @media screen and (max-width: 1100px) {
-    height: 144px;
-  }
-
-  @media screen and (max-width: 650px) {
-    height: 88px;
   }
 `;
 

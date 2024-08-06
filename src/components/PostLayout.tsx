@@ -29,8 +29,8 @@ const StyledPostSection = styled.main`
   min-height: 100vh;
   height: 100%;
   margin: auto;
-  padding-top: 76px;
-  padding-bottom: 76px;
+  padding-top: 64px;
+  padding-bottom: 64px;
 
   @media screen and (max-width: 1100px) {
     max-width: 100%;
