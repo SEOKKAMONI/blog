@@ -1,9 +1,16 @@
-import { PropsWithChildren, ReactNode } from "react";
+import type { PropsWithChildren } from "react";
+import Providers from "./providers";
 
-export default function RootLayout({ children }: PropsWithChildren) {
+import "@/styles/globals.css";
+
+const RootLayout = ({ children }: PropsWithChildren) => {
   return (
-    <html lang="kr">
-      <body>{children}</body>
+    <html lang="ko">
+      <body>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
-}
+};
+
+export default RootLayout;

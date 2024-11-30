@@ -1,3 +1,5 @@
-export default function HomePage() {
-  return <div>hi</div>;
-}
+import HomeView from "@/views/HomeView";
+
+const HomePage = () => <HomeView />;
+
+export default HomePage;
