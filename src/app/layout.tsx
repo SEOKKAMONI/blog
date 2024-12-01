@@ -1,7 +1,15 @@
+import localFont from "next/font/local";
 import type { PropsWithChildren } from "react";
 import Providers from "./providers";
 
 import "@/styles/globals.css";
+
+const pretendard = localFont({
+  src: "./fonts/PretendardVariable.woff2",
+  display: "swap",
+  weight: "45 920",
+  variable: "--font-pretendard",
+});
 
 export const metadata = {
   title: "SEOKKAMONI.blog",
@@ -18,7 +26,7 @@ export const metadata = {
 const RootLayout = ({ children }: PropsWithChildren) => {
   return (
     <html lang="ko">
-      <body>
+      <body className={pretendard.className}>
         <Providers>{children}</Providers>
       </body>
     </html>
