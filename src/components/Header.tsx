@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "@/utils/twMerge";
+import { cn } from "@/utils/cn";
 import { overlay } from "overlay-kit";
 import { useEffect, useState } from "react";
 import ContactOverlay from "./ContactOverlay";

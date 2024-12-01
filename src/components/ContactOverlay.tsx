@@ -1,4 +1,4 @@
-import { cn } from "@/utils/twMerge";
+import { cn } from "@/utils/cn";
 import IconClose from "./icons/IconClose";
 
 const SOCAILS = [

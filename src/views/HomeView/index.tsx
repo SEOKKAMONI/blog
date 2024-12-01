@@ -1,14 +1,24 @@
 import Layout from "@/components/layouts/Layout";
+import { getPosts } from "@/utils/getPosts";
 import Bio from "./components/Bio";
 import PostCard from "./components/PostCard";
 import PostList from "./components/PostList";
 
 const HomeView = () => {
+  const posts = getPosts();
+
   return (
     <Layout>
+      <Bio />
       <PostList>
-        <Bio />
-        <PostCard title="자취 생활을 시작하면서" date="2024-12-01" />
+        {posts.map((post) => (
+          <PostCard
+            key={post.title}
+            title={post.title}
+            date={post.date}
+            thumbnail={post.thumbnail}
+          />
+        ))}
       </PostList>
     </Layout>
   );
