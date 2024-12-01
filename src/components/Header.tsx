@@ -1,4 +1,6 @@
-import styled from "@emotion/styled";
+"use client";
+
+import { cn } from "@/utils/cn";
 import { overlay } from "overlay-kit";
 import { useEffect, useState } from "react";
 import ContactOverlay from "./ContactOverlay";
@@ -23,63 +25,29 @@ const Header = () => {
     };
   }, []);
 
-  const openContactOverlay = () =>{
+  const handleOpenContactOverlay = () => {
     overlay.open(({ isOpen, close }) => (
       <ContactOverlay isOpen={isOpen} onClose={close} />
     ));
-  }
+  };
 
   return (
-    <StyledHeader isSticky={isSticky}>
+    <header
+      className={cn(
+        "sticky top-0 flex items-center justify-between w-full h-[64px] z-10 px-[60px] bg-white max-1100:px-[32px] max-650:px-[20px]",
+        isSticky ? "border-[1px] border-lightGray" : null,
+      )}
+    >
       <Logo />
-      <StyledContactButton onClick={openContactOverlay}>
+      <button
+        type="button"
+        onClick={handleOpenContactOverlay}
+        className="flex justify-center items-center h-[40px] rounded-[20px_20px_20px_0] text-[16px] font-medium px-[16px] color-black bg-lightGray hover:bg-mediumGray"
+      >
         Contact
-      </StyledContactButton>
-    </StyledHeader>
+      </button>
+    </header>
   );
 };
 
 export default Header;
-
-const StyledHeader = styled.header<{ isSticky: boolean }>`
-  position: sticky;
-  top: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  height: 64px;
-  z-index: 1;
-  padding-left: 60px;
-  padding-right: 60px;
-  background-color: ${({ theme }) => theme.colors.white};
-  border-bottom: 1px solid
-    ${({ theme, isSticky }) => (isSticky ? theme.colors.lightGray : "none")};
-
-  @media screen and (max-width: 1100px) {
-    padding-left: 32px;
-    padding-right: 32px;
-  }
-
-  @media screen and (max-width: 650px) {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-`;
-
-const StyledContactButton = styled.button`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 40px;
-  border-radius: 20px 20px 20px 0;
-  font-size: 16px;
-  font-weight: medium;
-  padding: 0 16px;
-  color: ${({ theme }) => theme.colors.black};
-  background-color: ${({ theme }) => theme.colors.lightGray};
-
-  &:hover {
-    background-color: ${({ theme }) => theme.colors.mediumGray};
-  }
-`;

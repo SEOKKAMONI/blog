@@ -1,23 +1,9 @@
-import styled from "@emotion/styled";
-
 const Footer = () => {
   return (
-    <StyledFooter>
+    <footer className="flex items-center justify-center w-full h-[72px] overflow-hidden text-[18px] text-gray">
       © {new Date().getFullYear()}. SEOKKAMONI all rights reserved.
-    </StyledFooter>
+    </footer>
   );
 };
 
 export default Footer;
-
-const StyledFooter = styled.footer`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 72px;
-  overflow: hidden;
-  font-size: 18px;
-  font-weight: normal;
-  color: ${({ theme }) => theme.colors.gray};
-`;

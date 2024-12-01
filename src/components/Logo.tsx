@@ -1,15 +1,11 @@
-import styled from "@emotion/styled";
-import { Link } from "gatsby";
+import Link from "next/link";
 
 const Logo = () => {
-  return <StyledLogo to="/">SEOKKAMONI.blog</StyledLogo>;
+  return (
+    <Link href="/" className="cursor-pointer text-[18px] font-bold text-black">
+      SEOKKAMONI.blog
+    </Link>
+  );
 };
 
 export default Logo;
-
-const StyledLogo = styled(Link)`
-  cursor: pointer;
-  font-size: 18px;
-  font-weight: bold;
-  color: ${({ theme }) => theme.colors.black};
-`;

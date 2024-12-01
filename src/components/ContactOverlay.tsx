@@ -1,138 +1,42 @@
-import styled from "@emotion/styled";
-import { graphql, useStaticQuery } from "gatsby";
-import IconClose from "./Icons/IconClose";
-import { Socials } from "../types/types";
+import { cn } from "@/utils/cn";
+import IconClose from "./icons/IconClose";
 
-type ContactOverlayQuery = {
-  site: {
-    siteMetadata: {
-      socials: Socials;
-    };
-  };
-};
+const SOCAILS = [
+  "010-4826-0279",
+  "sj01048260279@gmail.com",
+  "github.com/SEOKKAMONI",
+  "instagram.com/sj20060706",
+] as const;
 
-type ContactOverlayProps = {
+interface ContactOverlayProps {
   isOpen: boolean;
   onClose: () => void;
-};
+}
 
 const ContactOverlay = ({ isOpen, onClose }: ContactOverlayProps) => {
-  const data = useStaticQuery<ContactOverlayQuery>(graphql`
-    query ContactOverlayQuery {
-      site {
-        siteMetadata {
-          socials {
-            phoneNumber
-            gmail
-            github
-            instagram
-          }
-        }
-      }
-    }
-  `);
-
-  const socials: Record<string, string> = data.site.siteMetadata?.socials;
-
   return (
-    <StyledContactOverlay isOpen={isOpen}>
-      <CloseButton onClick={onClose} />
-      <StyledContactWrapper>
-        {Object.values(socials).map((social) => (
-          <StyledSocial>{social}</StyledSocial>
+    <div
+      className={cn(
+        "fixed top-0 left-0 justify-center w-full h-full overflow-auto z-10 backdrop-blur-[3px] bg-[rgba(0,0,0,0.8)] max-1100:w-full max-1100:px-[32px] max-650:px-[20px]",
+        isOpen ? "flex" : "hidden",
+      )}
+    >
+      <IconClose
+        onClick={onClose}
+        className="absolute top-[20px] right-[70px] w-[72px] h-[72px] cursor-pointer text-mediumGray max-1100:right-[32px] max-1100:w-[48px] max-1100:h-[48px] max-650:right-[20px]"
+      />
+      <div className="flex flex-col gap-[36px] w-[700px] max-h-[780px] pt-[120px] max-1100:gap-[24px] max-1100:w-full max-650:gap-[16px]">
+        {SOCAILS.map((social) => (
+          <div
+            key={social}
+            className="flex items-center flex-shrink-0 w-full h-[100px] py-[22px] px-[36px] border-[2px] rounded-[36px_36px_36px_0] border-[rgba(255,255,255,0.25)] text-white text-[32px] font-[600] bg-[rgba(255,255,255,0.2)] max-1100:h-[80px] max-1100:text-[28px] max-650:h-[56px] max-650:text-[16px] max-650:py-[16px] max-650:px-[24px]"
+          >
+            {social}
+          </div>
         ))}
-      </StyledContactWrapper>
-    </StyledContactOverlay>
+      </div>
+    </div>
   );
 };
 
 export default ContactOverlay;
-
-const StyledContactOverlay = styled.div<{ isOpen: boolean }>`
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: ${({ isOpen }) => (isOpen ? "flex" : "none")};
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  z-index: 2;
-  backdrop-filter: blur(3px);
-  background-color: rgba(0, 0, 0, 0.8);
-
-  @media screen and (max-width: 1100px) {
-    width: 100%;
-    padding-left: 32px;
-    padding-right: 32px;
-  }
-
-  @media screen and (max-width: 650px) {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-`;
-
-const StyledContactWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 36px;
-  width: 700px;
-  max-height: 780px;
-  padding-top: 120px;
-
-  @media screen and (max-width: 1100px) {
-    gap: 24px;
-    width: 100%;
-  }
-
-  @media screen and (max-width: 650px) {
-    gap: 16px;
-  }
-`;
-
-const StyledSocial = styled.div`
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
-  width: 100%;
-  height: 100px;
-  padding: 22px 36px;
-  border-radius: 36px 36px 36px 0px;
-  border: 2px solid rgba(255, 255, 255, 0.25);
-  color: ${({ theme }) => theme.colors.white};
-  font-size: 32px;
-  font-weight: 600;
-  background-color: rgba(255, 255, 255, 0.2);
-
-  @media screen and (max-width: 1100px) {
-    height: 80px;
-    font-size: 28px;
-  }
-
-  @media screen and (max-width: 650px) {
-    height: 56px;
-    font-size: 16px;
-    padding: 16px 24px;
-  }
-`;
-
-const CloseButton = styled(IconClose)`
-  position: absolute;
-  top: 20px;
-  right: 70px;
-  width: 72px;
-  height: 72px;
-  cursor: pointer;
-  color: ${({ theme }) => theme.colors.mediumGray};
-
-  @media screen and (max-width: 1100px) {
-    right: 32px;
-    width: 48px;
-    height: 48px;
-  }
-
-  @media screen and (max-width: 650px) {
-    right: 20px;
-  }
-`;
